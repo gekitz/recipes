@@ -1,6 +1,94 @@
 [
   {
     "index": 0,
+    "code": "DWwNtKKoCm9",
+    "owner": "@vegan_high_protein",
+    "tags": [
+      "main",
+      "vegan",
+      "vegetarian",
+      "quick"
+    ],
+    "title": "Crispy Chili Peanut Udon One-Pot",
+    "ingredients": [
+      "400g Udon",
+      "100g Brokkoli",
+      "200g Tempeh (gebraten)",
+      "150g Wok-Gemuese",
+      "160g veganes Chicken (gebraten)",
+      "30g Spinat",
+      "60g Erdnussbutterpulver",
+      "75ml Wasser",
+      "2 EL Sojasauce",
+      "2 EL Ahornsirup",
+      "1 EL Crispy Chili Oel",
+      "Saft 1/2 Limette",
+      "250ml light Kokosmilch",
+      "200ml Wasser",
+      "2 EL Sojasauce",
+      "1 TL Currypaste"
+    ],
+    "preparation": [
+      "Alle Zutaten fuer die Erdnusssosse vermischen und zur Seite stellen.",
+      "Alle weiteren Zutaten in eine Pfanne geben, mit Deckel ca. 5-7 Min koecheln bis Brokkoli gar ist.",
+      "Geniessen."
+    ]
+  },
+  {
+    "index": 1,
+    "code": "DWd0DWJjLCj",
+    "owner": "@ichmachpizza",
+    "tags": [
+      "bread",
+      "vegan",
+      "vegetarian"
+    ],
+    "title": "Baerlauch-Dinkelweckerl",
+    "ingredients": [
+      "200g Dinkelmehl",
+      "100g Dinkelvollkornmehl",
+      "6g Salz",
+      "3g frische Hefe (oder 1,2g Trockenhefe)",
+      "230ml Wasser",
+      "50g Baerlauch (geschnitten)"
+    ],
+    "preparation": [
+      "Alles in eine Schuessel geben und vermengen bis das Mehl gebunden ist.",
+      "Teig in geoelten Behaelter geben, abdecken, 16-24h im Kuehlschrank.",
+      "Teig kalt verarbeiten: Portionen mit Loeffel aufs Backblech geben.",
+      "Bei 230 Grad mit Dampf ca. 20 Min backen bis goldbraun.",
+      "Auskuehlen und frisch geniessen."
+    ]
+  },
+  {
+    "index": 2,
+    "code": "DVttwLdjQrM",
+    "owner": "@grownourished",
+    "tags": [
+      "main",
+      "vegan",
+      "vegetarian",
+      "quick"
+    ],
+    "title": "Crispy Tofu Nuggets",
+    "ingredients": [
+      "400g Tofu",
+      "2 EL Sojasauce",
+      "1 TL Knoblauchpulver",
+      "1 TL Zwiebelpulver",
+      "1 TL Paprikapulver",
+      "1 EL Rapsoel (geschmacksneutral)",
+      "2 EL Speisestärke",
+      "Salz und Pfeffer"
+    ],
+    "preparation": [
+      "Den Tofu in gesalzenem Wasser 5 Min kochen und abkuehlen lassen.",
+      "Mit Sojasosse, Gewuerzen, Rapsoel und Speisestärke vermischen.",
+      "Bei 180 Grad im Airfryer ca. 15 Min backen."
+    ]
+  },
+  {
+    "index": 3,
     "code": "DWdnnpujcZq",
     "owner": "@antonikocht",
     "tags": [
@@ -11,18 +99,18 @@
     "preparation": []
   },
   {
-    "index": 1,
+    "index": 4,
     "code": "DWRlh50CKYV",
     "owner": "@oksi_sole",
     "tags": [
       "main"
     ],
-    "title": "Pappardelle al Ragù Toscano al Forno",
+    "title": "Pappardelle al RagÃ¹ Toscano al Forno",
     "ingredients": [],
     "preparation": []
   },
   {
-    "index": 2,
+    "index": 5,
     "code": "DV_10RHjsaD",
     "owner": "@julshealthyway",
     "tags": [
@@ -33,19 +121,19 @@
     "preparation": []
   },
   {
-    "index": 3,
+    "index": 6,
     "code": "DWJZringpNS",
     "owner": "@liliyummy",
     "tags": [
       "main",
       "quick"
     ],
-    "title": "Gerösteter Spargel auf Burrata",
+    "title": "GerÃ¶steter Spargel auf Burrata",
     "ingredients": [],
     "preparation": []
   },
   {
-    "index": 4,
+    "index": 7,
     "code": "DWJKn45jMlP",
     "owner": "@darmfreundliche_rezepte",
     "tags": [
@@ -57,7 +145,7 @@
     "preparation": []
   },
   {
-    "index": 5,
+    "index": 8,
     "code": "DWCG7vdt4G9",
     "owner": "@tobias.seitle",
     "tags": [
@@ -68,7 +156,7 @@
     "preparation": []
   },
   {
-    "index": 6,
+    "index": 9,
     "code": "DV6WRu6CIlK",
     "owner": "@nachofeld",
     "tags": [
@@ -79,18 +167,18 @@
     "preparation": []
   },
   {
-    "index": 7,
+    "index": 10,
     "code": "DV1ceL-jaNe",
     "owner": "@___socfit",
     "tags": [
       "bread"
     ],
-    "title": "Low Carb Brötchen ohne Mehl",
+    "title": "Low Carb BrÃ¶tchen ohne Mehl",
     "ingredients": [],
     "preparation": []
   },
   {
-    "index": 8,
+    "index": 11,
     "code": "DVUZ0TGEVaC",
     "owner": "@grillvaultbbq",
     "tags": [
@@ -101,18 +189,18 @@
     "preparation": []
   },
   {
-    "index": 9,
+    "index": 12,
     "code": "DVd8QSXiJmD",
     "owner": "@motioncooking",
     "tags": [
       "main"
     ],
-    "title": "Türkische Pide mit Beef & Cheese",
+    "title": "TÃ¼rkische Pide mit Beef & Cheese",
     "ingredients": [],
     "preparation": []
   },
   {
-    "index": 10,
+    "index": 13,
     "code": "DT0e-PcDVTi",
     "owner": "@dr.luisawerner",
     "tags": [
@@ -125,7 +213,7 @@
     "preparation": []
   },
   {
-    "index": 11,
+    "index": 14,
     "code": "DVOl8mECNFW",
     "owner": "@ayline.ea",
     "tags": [
@@ -136,7 +224,7 @@
     "preparation": []
   },
   {
-    "index": 12,
+    "index": 15,
     "code": "DVOW9YpjQ_r",
     "owner": "@dishingouthealth",
     "tags": [
@@ -148,7 +236,7 @@
     "preparation": []
   },
   {
-    "index": 13,
+    "index": 16,
     "code": "DVNxLMjiCNw",
     "owner": "@nadiya.nature.life",
     "tags": [
@@ -159,7 +247,7 @@
     "preparation": []
   },
   {
-    "index": 14,
+    "index": 17,
     "code": "DTIveqcjIGL",
     "owner": "@kevin_elstner",
     "tags": [
@@ -171,7 +259,7 @@
     "preparation": []
   },
   {
-    "index": 15,
+    "index": 18,
     "code": "DVELU01jEsz",
     "owner": "@jadehcooks",
     "tags": [
@@ -182,7 +270,7 @@
     "preparation": []
   },
   {
-    "index": 16,
+    "index": 19,
     "code": "DVMMroQDErA",
     "owner": "@lukas.krappe",
     "tags": [
@@ -194,7 +282,7 @@
     "preparation": []
   },
   {
-    "index": 17,
+    "index": 20,
     "code": "DVJ5REUDWgH",
     "owner": "@___socfit",
     "tags": [
@@ -206,7 +294,7 @@
     "preparation": []
   },
   {
-    "index": 18,
+    "index": 21,
     "code": "DTXx14IiLS3",
     "owner": "@recipeincaption",
     "tags": [
@@ -217,7 +305,7 @@
     "preparation": []
   },
   {
-    "index": 19,
+    "index": 22,
     "code": "DU4DisjAes7",
     "owner": "@kevinelstner",
     "tags": [
@@ -228,7 +316,7 @@
     "preparation": []
   },
   {
-    "index": 20,
+    "index": 23,
     "code": "DUlgR9xDDPx",
     "owner": "@herbifoods",
     "tags": [
@@ -241,7 +329,7 @@
     "preparation": []
   },
   {
-    "index": 21,
+    "index": 24,
     "code": "DTQXEDnAjMF",
     "owner": "@liliyummy",
     "tags": [
@@ -253,7 +341,7 @@
     "preparation": []
   },
   {
-    "index": 22,
+    "index": 25,
     "code": "DUOucPBiKAI",
     "owner": "@burger.world",
     "tags": [
@@ -265,7 +353,7 @@
     "preparation": []
   },
   {
-    "index": 23,
+    "index": 26,
     "code": "DU2rRACDJ_C",
     "owner": "@the_classy_taste",
     "tags": [
@@ -276,7 +364,7 @@
     "preparation": []
   },
   {
-    "index": 24,
+    "index": 27,
     "code": "DU3g0OVjdOp",
     "owner": "@omricooks",
     "tags": [
@@ -287,7 +375,7 @@
     "preparation": []
   },
   {
-    "index": 25,
+    "index": 28,
     "code": "DU0ktQPCEJ0",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -298,7 +386,7 @@
     "preparation": []
   },
   {
-    "index": 26,
+    "index": 29,
     "code": "DUi9Z65gUTM",
     "owner": "@munchinwithmaddie_",
     "tags": [
@@ -309,7 +397,7 @@
     "preparation": []
   },
   {
-    "index": 27,
+    "index": 30,
     "code": "DUwk8fAiHQk",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -320,7 +408,7 @@
     "preparation": []
   },
   {
-    "index": 28,
+    "index": 31,
     "code": "DUuAVIHCAGj",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -332,7 +420,7 @@
     "preparation": []
   },
   {
-    "index": 29,
+    "index": 32,
     "code": "DUlXgZZiMqR",
     "owner": "@foodieholly",
     "tags": [
@@ -343,19 +431,19 @@
     "preparation": []
   },
   {
-    "index": 30,
+    "index": 33,
     "code": "DUgb013jFrE",
     "owner": "@fit_sophia_laetitia",
     "tags": [
       "main",
       "vegetarian"
     ],
-    "title": "Ofen-Wrap-Spieße mit Halloumi",
+    "title": "Ofen-Wrap-SpieÃe mit Halloumi",
     "ingredients": [],
     "preparation": []
   },
   {
-    "index": 31,
+    "index": 34,
     "code": "DT0CJ8FCETD",
     "owner": "@jadecarolan_",
     "tags": [
@@ -367,7 +455,7 @@
     "preparation": []
   },
   {
-    "index": 32,
+    "index": 35,
     "code": "DTvX2YjCA0u",
     "owner": "@foodieholly",
     "tags": [
@@ -380,7 +468,7 @@
     "preparation": []
   },
   {
-    "index": 33,
+    "index": 36,
     "code": "DUizOXwiBY_",
     "owner": "@vegan_high_protein",
     "tags": [
@@ -388,12 +476,12 @@
       "vegan",
       "vegetarian"
     ],
-    "title": "Virale Gemüserolle",
+    "title": "Virale GemÃ¼serolle",
     "ingredients": [],
     "preparation": []
   },
   {
-    "index": 34,
+    "index": 37,
     "code": "DUZfDFZiOzH",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -405,7 +493,7 @@
     "preparation": []
   },
   {
-    "index": 35,
+    "index": 38,
     "code": "DTf8jcaCM9h",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -417,7 +505,7 @@
     "preparation": []
   },
   {
-    "index": 36,
+    "index": 39,
     "code": "DTwPmwUiHMd",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -428,7 +516,7 @@
     "preparation": []
   },
   {
-    "index": 37,
+    "index": 40,
     "code": "DUGhqANjDuu",
     "owner": "@fit_sophia_laetitia",
     "tags": [
@@ -439,7 +527,7 @@
     "preparation": []
   },
   {
-    "index": 38,
+    "index": 41,
     "code": "DTkLxBSjKq3",
     "owner": "@piaundhalloumi",
     "tags": [
@@ -451,7 +539,7 @@
     "preparation": []
   },
   {
-    "index": 39,
+    "index": 42,
     "code": "DT8CS5UChPq",
     "owner": "@jadecarolan_",
     "tags": [
@@ -462,7 +550,7 @@
     "preparation": []
   },
   {
-    "index": 40,
+    "index": 43,
     "code": "DTxv6ilDXB4",
     "owner": "@dishingouthealth",
     "tags": [
@@ -474,7 +562,7 @@
     "preparation": []
   },
   {
-    "index": 41,
+    "index": 44,
     "code": "DUBb4GZDArq",
     "owner": "@darmfreundliche_rezepte",
     "tags": [
@@ -485,7 +573,7 @@
     "preparation": []
   },
   {
-    "index": 42,
+    "index": 45,
     "code": "DRWUDtKiZ42",
     "owner": "@aathirasethumadhavan",
     "tags": [
@@ -498,7 +586,7 @@
     "preparation": []
   },
   {
-    "index": 43,
+    "index": 46,
     "code": "DUFRVjeEWjH",
     "owner": "@themealprepking",
     "tags": [
@@ -510,7 +598,7 @@
     "preparation": []
   },
   {
-    "index": 44,
+    "index": 47,
     "code": "DT-pC7MCKrg",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -521,7 +609,7 @@
     "preparation": []
   },
   {
-    "index": 45,
+    "index": 48,
     "code": "DTGQDH4jH4q",
     "owner": "@whatlukedidnext",
     "tags": [
@@ -532,7 +620,7 @@
     "preparation": []
   },
   {
-    "index": 46,
+    "index": 49,
     "code": "DTfyumyCAkO",
     "owner": "@vegan_high_protein",
     "tags": [
@@ -544,7 +632,7 @@
     "preparation": []
   },
   {
-    "index": 47,
+    "index": 50,
     "code": "DTapKVKCKW8",
     "owner": "@thecookingrx",
     "tags": [
@@ -555,7 +643,7 @@
     "preparation": []
   },
   {
-    "index": 48,
+    "index": 51,
     "code": "DS5bYy5iImL",
     "owner": "@liliyummy",
     "tags": [
@@ -566,7 +654,7 @@
     "preparation": []
   },
   {
-    "index": 49,
+    "index": 52,
     "code": "DTDkOXLjO_-",
     "owner": "@thecookingrx",
     "tags": [
@@ -577,7 +665,7 @@
     "preparation": []
   },
   {
-    "index": 50,
+    "index": 53,
     "code": "DTF1DwJCKEq",
     "owner": "@vegan_high_protein",
     "tags": [
@@ -590,7 +678,7 @@
     "preparation": []
   },
   {
-    "index": 51,
+    "index": 54,
     "code": "DS75C1ijI6O",
     "owner": "@mimicookss",
     "tags": [
@@ -601,7 +689,7 @@
     "preparation": []
   },
   {
-    "index": 52,
+    "index": 55,
     "code": "DS9_ty0CBPn",
     "owner": "@vegan_high_protein",
     "tags": [
@@ -613,7 +701,7 @@
     "preparation": []
   },
   {
-    "index": 53,
+    "index": 56,
     "code": "DRsW7uIjRvD",
     "owner": "@einfachbacken",
     "tags": [
@@ -624,7 +712,7 @@
     "preparation": []
   },
   {
-    "index": 54,
+    "index": 57,
     "code": "DSYZMA6kggv",
     "owner": "@recipeincaption",
     "tags": [
@@ -635,7 +723,7 @@
     "preparation": []
   },
   {
-    "index": 55,
+    "index": 58,
     "code": "DMnmLOPoLjg",
     "owner": "@joandbart",
     "tags": [
@@ -647,7 +735,7 @@
     "preparation": []
   },
   {
-    "index": 56,
+    "index": 59,
     "code": "DSYJgI4kuvj",
     "owner": "@theblessedmamaof4",
     "tags": [
@@ -658,7 +746,7 @@
     "preparation": []
   },
   {
-    "index": 57,
+    "index": 60,
     "code": "DR2a2ZpjZpg",
     "owner": "@bartcooks_",
     "tags": [
@@ -670,7 +758,7 @@
     "preparation": []
   },
   {
-    "index": 58,
+    "index": 61,
     "code": "DSYISJ_jBCG",
     "owner": "@themealprepking",
     "tags": [
@@ -682,7 +770,7 @@
     "preparation": []
   },
   {
-    "index": 59,
+    "index": 62,
     "code": "DSCheUZDNQb",
     "owner": "@kcallicious",
     "tags": [
@@ -693,7 +781,7 @@
     "preparation": []
   },
   {
-    "index": 60,
+    "index": 63,
     "code": "DR4RsYsDCZE",
     "owner": "@kcallicious",
     "tags": [
@@ -705,7 +793,7 @@
     "preparation": []
   },
   {
-    "index": 61,
+    "index": 64,
     "code": "DSBUsBHkrYh",
     "owner": "@overall.eats",
     "tags": [
@@ -716,7 +804,7 @@
     "preparation": []
   },
   {
-    "index": 62,
+    "index": 65,
     "code": "DSD_nj7iJhB",
     "owner": "@burger.world",
     "tags": [
@@ -728,7 +816,7 @@
     "preparation": []
   },
   {
-    "index": 63,
+    "index": 66,
     "code": "DSOItVwiC4D",
     "owner": "@burger.world",
     "tags": [
@@ -739,7 +827,7 @@
     "preparation": []
   },
   {
-    "index": 64,
+    "index": 67,
     "code": "DSFt8_iiCsg",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -750,7 +838,7 @@
     "preparation": []
   },
   {
-    "index": 65,
+    "index": 68,
     "code": "DR9G1OYjG6N",
     "owner": "@ichmachpizza",
     "tags": [
@@ -761,7 +849,7 @@
     "preparation": []
   },
   {
-    "index": 66,
+    "index": 69,
     "code": "DRvI9VuksJ3",
     "owner": "@yana.and.the.city",
     "tags": [
@@ -772,7 +860,7 @@
     "preparation": []
   },
   {
-    "index": 67,
+    "index": 70,
     "code": "DRxTtaqjHqb",
     "owner": "@burger.world",
     "tags": [
@@ -783,7 +871,7 @@
     "preparation": []
   },
   {
-    "index": 68,
+    "index": 71,
     "code": "DRxakRbiOMw",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -795,7 +883,7 @@
     "preparation": []
   },
   {
-    "index": 69,
+    "index": 72,
     "code": "DNlin0BCP6A",
     "owner": "@vegan_high_protein",
     "tags": [
@@ -807,7 +895,7 @@
     "preparation": []
   },
   {
-    "index": 70,
+    "index": 73,
     "code": "DQo_DH2kVsZ",
     "owner": "@burger.world",
     "tags": [
@@ -818,7 +906,7 @@
     "preparation": []
   },
   {
-    "index": 71,
+    "index": 74,
     "code": "DRGcXwWCkad",
     "owner": "@easymediterraneanrecipes",
     "tags": [
@@ -829,7 +917,7 @@
     "preparation": []
   },
   {
-    "index": 72,
+    "index": 75,
     "code": "DQIHkzjEaDV",
     "owner": "@foodieholly",
     "tags": [
@@ -840,7 +928,7 @@
     "preparation": []
   },
   {
-    "index": 73,
+    "index": 76,
     "code": "DOwAfrwjNlX",
     "owner": "@ichmachpizza",
     "tags": [
@@ -851,7 +939,7 @@
     "preparation": []
   },
   {
-    "index": 74,
+    "index": 77,
     "code": "DRw_-s6jJ4K",
     "owner": "@vegan_high_protein",
     "tags": [
