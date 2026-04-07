@@ -1,11 +1,1863 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <title>Georgs Rezepte 🍽️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Georgs Rezepte ð½ï¸</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8f5f0; color: #2d2d2d; }
+    header { background: linear-gradient(135deg, #e8603c, #d44f2b); color: white; padding: 2rem; text-align: center; }
+    header h1 { font-size: 2.2rem; font-weight: 700; }
+    header p { opacity: 0.9; margin-top: 0.3rem; font-size: 1rem; }
+    .filter-bar { background: white; padding: 1rem 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .filter-bar label { font-weight: 600; font-size: 0.85rem; color: #666; margin-right: 0.5rem; }
+    .search-box { flex: 1; min-width: 200px; padding: 0.4rem 0.8rem; border: 1.5px solid #ddd; border-radius: 20px; font-size: 0.9rem; outline: none; }
+    .search-box:focus { border-color: #e8603c; }
+    .filter-btn { padding: 0.35rem 0.8rem; border: 1.5px solid #ddd; border-radius: 20px; background: white; cursor: pointer; font-size: 0.82rem; transition: all 0.15s; white-space: nowrap; }
+    .filter-btn:hover { border-color: #e8603c; color: #e8603c; }
+    .filter-btn.active { background: #e8603c; border-color: #e8603c; color: white; }
+    .filter-btn .count { opacity: 0.7; font-size: 0.75rem; }
+    .btn-all { font-weight: 600; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+    .stats { text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .stats span { font-weight: 600; color: #e8603c; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.2rem; }
+    .recipe-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07); transition: transform 0.15s, box-shadow 0.15s; }
+    .recipe-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .recipe-card.hidden { display: none; }
+    .card-header { padding: 1.1rem 1.2rem 0.8rem; }
+    .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+    .owner { color: #e8603c; font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+    .owner:hover { text-decoration: underline; }
+    .ig-link { font-size: 0.78rem; color: #888; text-decoration: none; padding: 0.2rem 0.6rem; border: 1px solid #eee; border-radius: 12px; transition: all 0.15s; }
+    .ig-link:hover { border-color: #e8603c; color: #e8603c; }
+    .recipe-title { font-size: 1rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.6rem; color: #1a1a1a; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .tag { font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 10px; font-weight: 500; }
+    .tag-main { background: #fef3e2; color: #c0620a; }
+    .tag-salad { background: #e8f5e9; color: #2e7d32; }
+    .tag-bread { background: #fff3e0; color: #e65100; }
+    .tag-dessert { background: #fce4ec; color: #c2185b; }
+    .tag-vegan { background: #e8f5e9; color: #1b5e20; }
+    .tag-vegetarian { background: #f3e5f5; color: #6a1b9a; }
+    .tag-quick { background: #e3f2fd; color: #1565c0; }
+    .card-body { padding: 0 1.2rem 1rem; border-top: 1px solid #f5f5f5; margin-top: 0.5rem; padding-top: 0.8rem; }
+    .section { margin-bottom: 0.8rem; }
+    .section h4 { font-size: 0.8rem; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+    .section ul, .section ol { padding-left: 1.3rem; }
+    .section li { font-size: 0.88rem; line-height: 1.5; color: #444; margin-bottom: 0.15rem; }
+    .no-results { text-align: center; padding: 4rem; color: #888; grid-column: 1/-1; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      .grid { grid-template-columns: 1fr; }
+      .filter-bar { padding: 0.8rem; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Georgs Rezepte 🍽️</h1>
-  <p>Gesammelte Instagram-Rezepte von Georg und Katja</p>
-  <p>145 Rezepte erfolgreich geladen</p>
+  <header>
+    <h1>Georgs Rezepte ð½ï¸</h1>
+    <p>Gesammelte Instagram-Rezepte von Georg und Katja</p>
+  </header>
+
+  <div class="filter-bar">
+    <label>Filter:</label>
+    <button class="filter-btn btn-all active" data-tag="all">Alle <span class="count">(145)</span></button>
+    <button class="filter-btn" data-tag="main">ð½ï¸ Hauptgericht <span class="count">(104)</span></button>
+<button class="filter-btn" data-tag="salad">ð¥ Salat <span class="count">(9)</span></button>
+<button class="filter-btn" data-tag="bread">ð Brot & GebÃ¤ck <span class="count">(19)</span></button>
+<button class="filter-btn" data-tag="dessert">ð° Dessert <span class="count">(16)</span></button>
+<button class="filter-btn" data-tag="vegan">ð± Vegan <span class="count">(17)</span></button>
+<button class="filter-btn" data-tag="vegetarian">ð¥¦ Vegetarisch <span class="count">(26)</span></button>
+<button class="filter-btn" data-tag="quick">â¡ Schnell <span class="count">(50)</span></button>
+    <input class="search-box" type="search" placeholder="ð Rezept suchen..." id="search-input">
+  </div>
+
+  <div class="container">
+    <div class="stats" id="stats">Zeige <span id="visible-count">145</span> von <span>145</span> Rezepten</div>
+    <div class="grid" id="recipe-grid">
+      
+    <div class="recipe-card has-details" data-tags="main vegan vegetarian quick" data-code="DWwNtKKoCm9">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DWwNtKKoCm9/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Crispy Chili Peanut Udon One-Pot</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>400g Udon</li><li>100g Brokkoli</li><li>200g Tempeh (gebraten)</li><li>150g Wok-Gemuese</li><li>160g veganes Chicken (gebraten)</li><li>30g Spinat</li><li>60g Erdnussbutterpulver</li><li>75ml Wasser</li><li>2 EL Sojasauce</li><li>2 EL Ahornsirup</li><li>1 EL Crispy Chili Oel</li><li>Saft 1/2 Limette</li><li>250ml light Kokosmilch</li><li>200ml Wasser</li><li>2 EL Sojasauce</li><li>1 TL Currypaste</li></ul></div><div class="section"><h4>Zubereitung</h4><ol><li>Alle Zutaten fuer die Erdnusssosse vermischen und zur Seite stellen.</li><li>Alle weiteren Zutaten in eine Pfanne geben, mit Deckel ca. 5-7 Min koecheln bis Brokkoli gar ist.</li><li>Geniessen.</li></ol></div></div>
+    </div>
+
+    <div class="recipe-card has-details" data-tags="bread vegan vegetarian" data-code="DWd0DWJjLCj">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DWd0DWJjLCj/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">BÃ¤rlauch-Dinkelweckerl</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>200g Dinkelmehl</li><li>100g Dinkelvollkornmehl</li><li>6g Salz</li><li>3g frische Hefe (oder 1,2g Trockenhehe)</li><li>230ml Wasser</li><li>50g BÃ¤rlauch (geschnitten)</li></ul></div><div class="section"><h4>Zubereitung</h4><ol><li>Alles in eine SchÃ¼ssel geben und vermengen bis das Mehl gebunden ist.</li><li>Teig in geÃ¶lten BehÃ¤lter geben, abdecken, 16-24h im KÃ¼hlschrank.</li><li>Teig kalt verarbeiten: Portionen mit LÃ¶ffel aufs Backblech geben.</li><li>Bei 230 Grad mit Dampf ca. 20 Min backen bis goldbraun.</li><li>AuskÃ¼hlen und frisch genieÃen.</li></ol></div></div>
+    </div>
+
+    <div class="recipe-card has-details" data-tags="main vegan vegetarian quick" data-code="DVttwLdjQrM">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/grownourished/" target="_blank">@grownourished</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVttwLdjQrM/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Crispy Tofu Nuggets</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>400g Tofu</li><li>2 EL Sojasauce</li><li>1 TL Knoblauchpulver</li><li>1 TL Zwiebelpulver</li><li>1 TL Paprikapulver</li><li>1 EL RapsÃ¶l (geschmacksneutral)</li><li>2 EL SpeisestÃ¤rke</li><li>Salz und Pfeffer</li></ul></div><div class="section"><h4>Zubereitung</h4><ol><li>Den Tofu in gesalzenem Wasser 5 Min kochen und abkÃ¼hlen lassen.</li><li>Mit SojasoÃe, GewÃ¼rzen, RapsÃ¶l und SpeisestÃ¤rke vermischen.</li><li>Bei 180 Grad im Airfryer ca. 15 Min backen.</li></ol></div></div>
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DWdnnpujcZq">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/antonikocht/" target="_blank">@antonikocht</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DWdnnpujcZq/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Shakshuka</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DWRlh50CKYV">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/oksi_sole/" target="_blank">@oksi_sole</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DWRlh50CKYV/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Pappardelle al RagÃ¹ Toscano al Forno</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="salad" data-code="DV_10RHjsaD">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/julshealthyway/" target="_blank">@julshealthyway</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DV_10RHjsaD/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Proteinreicher Brokkoli-Quinoa-Salat mit Erdnussdressing</h3>
+        <div class="tags"><span class="tag tag-salad">ð¥ Salat</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DWJZringpNS">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/liliyummy/" target="_blank">@liliyummy</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DWJZringpNS/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">GerÃ¶steter Spargel auf Burrata</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DWJKn45jMlP">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/darmfreundliche_rezepte/" target="_blank">@darmfreundliche_rezepte</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DWJKn45jMlP/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Darmfreundliches Gericht in 20 Minuten</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="salad" data-code="DWCG7vdt4G9">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/tobias.seitle/" target="_blank">@tobias.seitle</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DWCG7vdt4G9/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Mediterraner Linsensalat</h3>
+        <div class="tags"><span class="tag tag-salad">ð¥ Salat</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DV6WRu6CIlK">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/nachofeld/" target="_blank">@nachofeld</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DV6WRu6CIlK/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Jerk Chicken</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread" data-code="DV1ceL-jaNe">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/___socfit/" target="_blank">@___socfit</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DV1ceL-jaNe/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Low Carb BrÃ¶tchen ohne Mehl</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DVUZ0TGEVaC">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/grillvaultbbq/" target="_blank">@grillvaultbbq</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVUZ0TGEVaC/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Shrimp Tacos mit Ananas Pico De Gallo</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DVd8QSXiJmD">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/motioncooking/" target="_blank">@motioncooking</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVd8QSXiJmD/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">TÃ¼rkische Pide mit Beef & Cheese</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian quick" data-code="DT0e-PcDVTi">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/dr.luisawerner/" target="_blank">@dr.luisawerner</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DT0e-PcDVTi/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Maiswrap</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DVOl8mECNFW">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ayline.ea/" target="_blank">@ayline.ea</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVOl8mECNFW/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Smoky Chipotle Chicken Wrap</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DVOW9YpjQ_r">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/dishingouthealth/" target="_blank">@dishingouthealth</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVOW9YpjQ_r/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">25 Minute Mediterranean Halloumi Pitas</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread" data-code="DVNxLMjiCNw">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/nadiya.nature.life/" target="_blank">@nadiya.nature.life</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVNxLMjiCNw/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Knuspriges Weizen-Sauerteigbrot</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DTIveqcjIGL">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/kevin_elstner/" target="_blank">@kevin_elstner</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTIveqcjIGL/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Low Carb Lahmacun</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DVELU01jEsz">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/jadehcooks/" target="_blank">@jadehcooks</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVELU01jEsz/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Tuscan Turkey Meatballs</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DVMMroQDErA">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/lukas.krappe/" target="_blank">@lukas.krappe</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVMMroQDErA/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Sweet Potato Smash Burger</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DVJ5REUDWgH">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/___socfit/" target="_blank">@___socfit</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DVJ5REUDWgH/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Schnelles Skyr-Brot</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread" data-code="DTXx14IiLS3">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/recipeincaption/" target="_blank">@recipeincaption</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTXx14IiLS3/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Sauerteig Weizenbrot</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DU4DisjAes7">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/kevinelstner/" target="_blank">@kevinelstner</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DU4DisjAes7/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Protein Overnight Oats</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegan vegetarian" data-code="DUlgR9xDDPx">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/herbifoods/" target="_blank">@herbifoods</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUlgR9xDDPx/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Tofu Smashburgers</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main salad" data-code="DTQXEDnAjMF">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/liliyummy/" target="_blank">@liliyummy</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTQXEDnAjMF/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Knuspriger Lachs-Gurken-Salat</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-salad">ð¥ Salat</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DUOucPBiKAI">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUOucPBiKAI/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Lemon-Garlic Chicken Pitas</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DU2rRACDJ_C">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/the_classy_taste/" target="_blank">@the_classy_taste</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DU2rRACDJ_C/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Sushi-Paradies in Graz</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DU3g0OVjdOp">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/omricooks/" target="_blank">@omricooks</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DU3g0OVjdOp/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Dumpling Tacos</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DU0ktQPCEJ0">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DU0ktQPCEJ0/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Mediterranean Chicken Stir Fry</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DUi9Z65gUTM">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/munchinwithmaddie_/" target="_blank">@munchinwithmaddie_</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUi9Z65gUTM/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Creamy Cajun Salmon Orzo</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DUwk8fAiHQk">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUwk8fAiHQk/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Mediterranean Lemon Garlic Aioli Burger</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DUuAVIHCAGj">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUuAVIHCAGj/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">One-Pot Shawarma Chicken and Rice</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DUlXgZZiMqR">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/foodieholly/" target="_blank">@foodieholly</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUlXgZZiMqR/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Smashed Dumpling Tacos</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DUgb013jFrE">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUgb013jFrE/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Ofen-Wrap-SpieÃe mit Halloumi</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DT0CJ8FCETD">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/jadecarolan_/" target="_blank">@jadecarolan_</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DT0CJ8FCETD/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Gochujang Honey Halloumi Gyros</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian quick" data-code="DTvX2YjCA0u">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/foodieholly/" target="_blank">@foodieholly</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTvX2YjCA0u/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Halloumi Shawarma Wraps</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="salad vegan vegetarian" data-code="DUizOXwiBY_">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUizOXwiBY_/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Virale GemÃ¼serolle</h3>
+        <div class="tags"><span class="tag tag-salad">ð¥ Salat</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DUZfDFZiOzH">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUZfDFZiOzH/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Crispy Chicken Schnitzel im Wrap</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DTf8jcaCM9h">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTf8jcaCM9h/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Grilled Zucchini & Feta Chickpea Wrap</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DTwPmwUiHMd">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTwPmwUiHMd/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Greek Chicken Souvlaki Bowls</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DUGhqANjDuu">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUGhqANjDuu/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Greek Lamb Souvlaki Flatbread</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DTkLxBSjKq3">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/piaundhalloumi/" target="_blank">@piaundhalloumi</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTkLxBSjKq3/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Halloumi Tacos mit Mango-Salsa</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DT8CS5UChPq">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/jadecarolan_/" target="_blank">@jadecarolan_</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DT8CS5UChPq/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Honey Soy Crispy Chilli Beef</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="salad vegan" data-code="DTxv6ilDXB4">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/dishingouthealth/" target="_blank">@dishingouthealth</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTxv6ilDXB4/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Shaved Carrot Salad mit Citrus Miso-Ginger Dressing</h3>
+        <div class="tags"><span class="tag tag-salad">ð¥ Salat</span><span class="tag tag-vegan">ð± Vegan</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DUBb4GZDArq">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/darmfreundliche_rezepte/" target="_blank">@darmfreundliche_rezepte</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUBb4GZDArq/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Cremiger Himbeer Cheesecake</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main salad quick" data-code="DRWUDtKiZ42">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/aathirasethumadhavan/" target="_blank">@aathirasethumadhavan</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRWUDtKiZ42/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">High-Protein Comfort Meal</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-salad">ð¥ Salat</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DUFRVjeEWjH">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/themealprepking/" target="_blank">@themealprepking</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DUFRVjeEWjH/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Protein Egg Fried Rice</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DT-pC7MCKrg">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DT-pC7MCKrg/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Tuscan Chicken Pasta Bake</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DTGQDH4jH4q">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/whatlukedidnext/" target="_blank">@whatlukedidnext</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTGQDH4jH4q/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Nduja Aubergines with Hot Honey</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegan" data-code="DTfyumyCAkO">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTfyumyCAkO/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Spaghetti al Forno</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DTapKVKCKW8">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/thecookingrx/" target="_blank">@thecookingrx</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTapKVKCKW8/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Creamy Mushroom & White Bean Skillet</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DS5bYy5iImL">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/liliyummy/" target="_blank">@liliyummy</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DS5bYy5iImL/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Honig-Senf Chicken Bowl</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DTDkOXLjO_-">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/thecookingrx/" target="_blank">@thecookingrx</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTDkOXLjO_-/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Creamy Tomato Chickpea Stew</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegan quick" data-code="DTF1DwJCKEq">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DTF1DwJCKEq/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Quick & Creamy Gnocchi One-Pot</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DS75C1ijI6O">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/mimicookss/" target="_blank">@mimicookss</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DS75C1ijI6O/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Steamed Rice Paper Dumplings</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegan" data-code="DS9_ty0CBPn">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DS9_ty0CBPn/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Cremige Spinat-Champignon Pasta</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DRsW7uIjRvD">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/einfachbacken/" target="_blank">@einfachbacken</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRsW7uIjRvD/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Spekulatius-Himbeer-Dessert</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread" data-code="DSYZMA6kggv">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/recipeincaption/" target="_blank">@recipeincaption</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DSYZMA6kggv/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Sauerteig Weizenbrot</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegan" data-code="DMnmLOPoLjg">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/joandbart/" target="_blank">@joandbart</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DMnmLOPoLjg/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Spicy Sun-Dried Tomato Dip</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DSYJgI4kuvj">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/theblessedmamaof4/" target="_blank">@theblessedmamaof4</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DSYJgI4kuvj/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">High-Protein Cheesy Tortilla Bake</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DR2a2ZpjZpg">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/bartcooks_/" target="_blank">@bartcooks_</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DR2a2ZpjZpg/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Veggie Tagliatelle</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DSYISJ_jBCG">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/themealprepking/" target="_blank">@themealprepking</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DSYISJ_jBCG/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">One-Pan Creamy Tomato Pasta</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DSCheUZDNQb">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/kcallicious/" target="_blank">@kcallicious</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DSCheUZDNQb/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">High-Protein Wrap mit Thunfisch</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert quick" data-code="DR4RsYsDCZE">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/kcallicious/" target="_blank">@kcallicious</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DR4RsYsDCZE/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Apfel Taler</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DSBUsBHkrYh">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/overall.eats/" target="_blank">@overall.eats</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DSBUsBHkrYh/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Peanut Chili Oil Noodles</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DSD_nj7iJhB">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DSD_nj7iJhB/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">High-Protein Pizza Toast</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DSOItVwiC4D">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DSOItVwiC4D/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">One Pot Creamy Chicken Pasta</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DSFt8_iiCsg">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DSFt8_iiCsg/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Spiced Lamb Kofta Bowl</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DR9G1OYjG6N">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DR9G1OYjG6N/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Kaiserschmarrn</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DRvI9VuksJ3">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/yana.and.the.city/" target="_blank">@yana.and.the.city</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRvI9VuksJ3/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Snowfall Spritz Cocktail</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DRxTtaqjHqb">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRxTtaqjHqb/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Crispy Korean Chicken Burger</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DRxakRbiOMw">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRxakRbiOMw/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Gochujang Noodles</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert vegan" data-code="DNlin0BCP6A">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DNlin0BCP6A/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Vegane Protein Waffeln</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span><span class="tag tag-vegan">ð± Vegan</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DQo_DH2kVsZ">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQo_DH2kVsZ/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Chicken Tikka Baguette</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DRGcXwWCkad">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRGcXwWCkad/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Creamy Tomato Basil Pasta</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DQIHkzjEaDV">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/foodieholly/" target="_blank">@foodieholly</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQIHkzjEaDV/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Strawberry Crumble</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DOwAfrwjNlX">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DOwAfrwjNlX/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Wiener Schnitzel</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegan quick" data-code="DRw_-s6jJ4K">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRw_-s6jJ4K/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Cremige Tomaten-Pasta</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card has-details" data-tags="bread quick" data-code="DPEUAX3CLKn">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/kilic_story/" target="_blank">@kilic_story</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPEUAX3CLKn/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Olivenbrot ohne kneten</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>400g Weizenmehl T550 oder Dinkelmehl T630</li><li>1 1/2 TL Salz</li><li>3/4 Pck Trockenhefe</li><li>320ml lauwarmes Wasser</li><li>120g Oliven</li></ul></div><div class="section"><h4>Zubereitung</h4><ol><li>1. Teig zubereiten in 1h ruhen lassen.</li><li>2. Mit nasser Hand vier Ecken in die Mitte falten.</li><li>3. Teig abgedeckt 30 min ruhen lassen.</li><li>4. Schritt 2 und 3 zweimal wiederholen.</li><li>5. Teig zu Kugel formen, auf Backpapier in Gusseisentopf legen.</li><li>6. Bei 230C mit Deckel 30 Min backen, dann ohne Deckel 15 Min.</li></ol></div></div>
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DQe0a64iHjP">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/leicht_gemixt/" target="_blank">@leicht_gemixt</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQe0a64iHjP/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Familienkruste</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DQzVExhDHtK">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/weizenfrei_gluecklich/" target="_blank">@weizenfrei_gluecklich</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQzVExhDHtK/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">AnfÃ¤ngerbrot Ã¼ber Nacht</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DRSVywSiGvE">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/joandbart/" target="_blank">@joandbart</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRSVywSiGvE/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Roasted Red Peppers</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DQzYTTyAuFw">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/byolyvv/" target="_blank">@byolyvv</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQzYTTyAuFw/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Creamy Bacon Broccoli Pasta</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DRKv-0sDD8C">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/harrietrieper/" target="_blank">@harrietrieper</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRKv-0sDD8C/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Brot-Rezept</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DRaDyYHjJUB">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRaDyYHjJUB/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Brot zum Abspeichern</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DRIENQajc27">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/verschiedene_gerichte/" target="_blank">@verschiedene_gerichte</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRIENQajc27/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">HÃ¤hnchen sÃ¼Ã sauer</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegan vegetarian quick" data-code="DRfAGRliIhl">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRfAGRliIhl/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Schnelles Meal-Prep Gericht</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DQ1CEUJiEEd">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/kuechensinn/" target="_blank">@kuechensinn</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQ1CEUJiEEd/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Karottenkuchen mit FrischkÃ¤secreme</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DNwIj2cZP0h">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/nourishing/" target="_blank">@nourishing</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DNwIj2cZP0h/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Crispy Salmon Bites</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert quick" data-code="DQi-6trjbeu">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/tobias.seitle/" target="_blank">@tobias.seitle</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQi-6trjbeu/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Gesunder Kaiserschmarrn</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian quick" data-code="DRSGW-lDalx">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/tobias.seitle/" target="_blank">@tobias.seitle</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRSGW-lDalx/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Miso-Nudelsuppe mit pflanzlichem Protein</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DPwXp1BiHr3">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/recipe_road/" target="_blank">@recipe_road</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPwXp1BiHr3/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Creamy Chipotle Pasta</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DQ1A9kwDMWD">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/teichners_pizza_palace/" target="_blank">@teichners_pizza_palace</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQ1A9kwDMWD/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Homemade Wraps</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DQP4dsPkhez">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/chef.antonio.zavala/" target="_blank">@chef.antonio.zavala</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQP4dsPkhez/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">RagÃ¹ con Rigatoni</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DQwthUPjAsM">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/kathas_balanced_kitchen/" target="_blank">@kathas_balanced_kitchen</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQwthUPjAsM/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Einfaches Brotrezept</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DRIDIdBiFha">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/cedriklorenzen/" target="_blank">@cedriklorenzen</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRIDIdBiFha/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">ASMR Fish Burger</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DP4RhFzDLhZ">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DP4RhFzDLhZ/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Fitness-Rezept zum Abspeichern</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="salad quick" data-code="DP958h4CZW6">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/simple.home.edit/" target="_blank">@simple.home.edit</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DP958h4CZW6/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Bang Bang Chicken Salad</h3>
+        <div class="tags"><span class="tag tag-salad">ð¥ Salat</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card has-details" data-tags="main vegan vegetarian" data-code="DRHu8R_CEo8">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRHu8R_CEo8/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Sommerrolle mit veganem Chicken</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>50g gekochter Reis</li><li>GemÃ¸se nach Wahl (MÃ¶hre, Gurke, Paprika, Rotkohl)</li><li>3 ReispapierblÃ¤tter</li><li>160g veganes Chicken</li></ul></div><div class="section"><h4>Zubereitung</h4><ol><li>1. Veganes Chicken im Airfryer garen und Reis kochen.</li><li>2. GemÃ¼se kleinschneiden.</li><li>3. ReispapierblÃ¤tter Ã¼berlappend auslegen und befÃ¼llen.</li><li>4. Einwickeln und genieÃen.</li></ol></div></div>
+    </div>
+
+    <div class="recipe-card " data-tags="salad vegan vegetarian" data-code="DPQ1wLFESWM">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/_plantbaes_/" target="_blank">@_plantbaes_</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPQ1wLFESWM/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Baked Harvest Salad</h3>
+        <div class="tags"><span class="tag tag-salad">ð¥ Salat</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian quick" data-code="DQ1AezRjZqs">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/tobias.seitle/" target="_blank">@tobias.seitle</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQ1AezRjZqs/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">KÃ¼rbis-Feta-Pasta</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DQ_WI9cDdpm">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/simple.home.edit/" target="_blank">@simple.home.edit</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQ_WI9cDdpm/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Peking-style Beef</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DQTSPa8Ctue">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/herztopfliebe/" target="_blank">@herztopfliebe</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQTSPa8Ctue/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">One-Pot Tomaten-Orzo-Pasta mit HÃ¸hnchen und Spinat</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DRDbzedkt-w">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/simple.home.edit/" target="_blank">@simple.home.edit</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DRDbzedkt-w/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Meal Prep Bowl</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DQhkGmJiJQb">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/food.by.lari/" target="_blank">@food.by.lari</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQhkGmJiJQb/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Laris Rezept</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DQ9B_n5DLKu">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/heute.keine.zeit/" target="_blank">@heute.keine.zeit</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQ9B_n5DLKu/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Pad Kra Pao Suppe mit Kokosmilch</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DNxhx583j3Y">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/andyseastcoastkitchen_/" target="_blank">@andyseastcoastkitchen_</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DNxhx583j3Y/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">East Coast Kitchen Rezept</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegan vegetarian quick" data-code="DQ4cTJIjtkh">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQ4cTJIjtkh/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Veganer Netflix-Snack</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DQ4kWBrjDZ6">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/sweet.dominik/" target="_blank">@sweet.dominik</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQ4kWBrjDZ6/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Cremige KÃ¼rbis-Gnocchi mit Blattspinat</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread" data-code="DNdwyvAswE4">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DNdwyvAswE4/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Fitness-Brot zum Abspeichern</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DQEuetCjBWi">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQEuetCjBWi/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Nusszopf</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DPDiUv3CCaM">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/food.by.lari/" target="_blank">@food.by.lari</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPDiUv3CCaM/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Schmorbraten mit MÃ¶hren und Kartoffeln</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DQYkxyiiB9K">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQYkxyiiB9K/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Apfel-Zimt-Streusel</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert quick" data-code="DOTKj_viBdq">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DOTKj_viBdq/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Luftiger Pflaumenkuchen mit Zimttopping</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread" data-code="DP_6yK_jC6_">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/einfach.hassan/" target="_blank">@einfach.hassan</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DP_6yK_jC6_/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Hassans Brotrezept</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DPnlnTsiI0z">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/sandraskochblog/" target="_blank">@sandraskochblog</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPnlnTsiI0z/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Sandras Rezept</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DQQ565_DNFg">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/dinnerbyben/" target="_blank">@dinnerbyben</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DQP565_DNFg/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Dinner by Ben</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DPZQa15AFX3">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/roxyandben/" target="_blank">@roxyandben</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPZQa15AFX3/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Roxy and Ben Rezept</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card has-details" data-tags="main" data-code="DAVO46VtlDk">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DAVO46VtlDk/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Schmorbraten</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>1 kg Rinderbraten</li><li>2 groÃe weiÃe Zwiebeln, halbiert</li><li>4 Knoblauchzehen, gehackt</li><li>3 EL Butterschmalz</li><li>1 EL Tomatenmark</li><li>2 EL Mehl</li><li>300ml Rotwein</li><li>500ml Rinderfond</li><li>500g kleine Kartoffeln</li><li>4 groÃe MÃ¶hren</li><li>Salz, Pfeffer</li><li>Salbei, LorbeerblÃ¤tter</li></ul></div><div class="section"><h4>Zubereitung</h4><ol><li>1. BrÃ¤ter erhitzen, Fleisch von allen Seiten krÃ¤ftig anbraten.</li><li>2. Zwiebeln und Knoblauch glasig dÃ¼nsten.</li><li>3. Tomatenmark anrÃ¶sten, Mehl hinzu.</li><li>4. Mit Rotwein ablÃ¶schen, einkÃ¶cheln.</li><li>5. Mit Fond ablÃ¶schen, Fleisch hinein.</li><li>6. GemÃ¼se und KrÃ¤uter hinzufÃ¼gen.</li><li>7. Bei 160C ca. 2,5-3h im Ofen schmoren.</li></ol></div></div>
+    </div>
+
+    <div class="recipe-card has-details" data-tags="main" data-code="DP6sgK_AniG">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/byolyvv/" target="_blank">@byolyvv</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DP6sgK_AniG/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Creamy Orzo mit Chicken</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>Ãl</li><li>Zwiebel</li><li>Knoblauch</li><li>Paprika, Oregano</li><li>Tomatenmark</li><li>HÃ¤hnchenbrustfilet</li><li>Orzo</li><li>Getrocknete Tomaten</li><li>Leichte Sahne</li><li>GemÃ¼sebrÃ¼he</li><li>Salz und Pfeffer</li><li>Parmesan</li><li>Basilikum</li></ul></div></div>
+    </div>
+
+    <div class="recipe-card has-details" data-tags="main vegetarian quick" data-code="DP8-jjmAhPE">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/nikis_healthyspace/" target="_blank">@nikis_healthyspace</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DP8-jjmAhPE/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Dattel-KÃ¼rbisdip</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>150g FrischkÃ¤se</li><li>4 EL OlivenÃ¶l</li></ul></div></div>
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DM-OwR4stAk">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DM-OwR4stAk/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Schmorbraten (Klassisch)</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DNIvZlDtOqJ">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/massicooksitalian/" target="_blank">@massicooksitalian</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DNIvZlDtOqJ/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">RagÃ¹ alla Genovese</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DPrMkRKjXdi">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/i.am.never.full/" target="_blank">@i.am.never.full</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPrMkRKjXdi/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Black Pepper Chicken</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card has-details" data-tags="main vegan vegetarian quick" data-code="DMV4i_4oQnS">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/sophsplantkitchen/" target="_blank">@sophsplantkitchen</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DMV4i_4oQnS/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Black Bean Tacos</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegan">ð± Vegan</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>4 FrÃ¼hlingszwiebeln</li><li>3 Knoblauchzehen</li><li>1/2 rote Chili</li><li>GewÃ¼rzmischung</li><li>Tomatenmark</li><li>Erdnussbutter</li><li>Bohnen und ihr Wasser</li><li>Limette</li></ul></div><div class="section"><h4>Zubereitung</h4><ol><li>1. FrÃ¼hlingszwiebeln, Chili, Korianderstiele 5 Min anbraten.</li><li>2. GewÃ¼rze und Knoblauch hinzufÃ¼gen.</li><li>3. Tomatenmark und Erdnussbutter hinein.</li><li>4. Bohnen mit Wasser dazu, 10-15 Min einkÃ¶cheln.</li><li>5. Limette ausdrÃ¼cken, abschmecken.</li></ol></div></div>
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DOtO7dFDGmw">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/teichners_pizza_palace/" target="_blank">@teichners_pizza_palace</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DOtO7dFDGmw/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Fladenbrote</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DM-NpolseyF">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DM-NpolseyF/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Pflaumenkuchen mit Zimttopping</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread dessert" data-code="DPWMqh3jOQM">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPWMqh3jOQM/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Schoko- oder PistaziengebÃ¤ck</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DNfeTvEsQLG">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DNfeTvEsQLG/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Ginas Rezept</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DOnEKjgCDuu">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DOnEKjgCDuu/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Ginas Rezept 2</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DPeVGOaCByF">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPeVGOaCByF/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Ginas Rezept 3</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DNbYPdKtVX1">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/teichners_pizza_palace/" target="_blank">@teichners_pizza_palace</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DNbYPdKtVX1/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Chicken Teriyaki Sandwich</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DN6XKRvkoH3">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/recipeincaption/" target="_blank">@recipeincaption</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DN6XKRvkoH3/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Sheet Pan Chicken Kefta Wraps</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DPB94lTCKdq">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ottolenghi/" target="_blank">@ottolenghi</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DPB94lTCKdq/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Burnt Aubergine with Feta and Harissa Oil</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DM8AEOHIR38">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/piaundhalloumi/" target="_blank">@piaundhalloumi</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DM8AEOHIR38/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Lazy Lahmacun</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DLwaDMBtVJz">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/teichners_pizza_palace/" target="_blank">@teichners_pizza_palace</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DLwaDMBtVJz/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Italienische Meatball-Bowl</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main vegetarian" data-code="DM8MQeVoKrO">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/joandbart/" target="_blank">@joandbart</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DM8MQeVoKrO/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Ultimate Garlic Dip</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-vegetarian">ð¥¦ Vegetarisch</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DKMp20qxax8">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ryanmichaelcarter/" target="_blank">@ryanmichaelcarter</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DKMp20qxax8/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Matcha Fire Butter</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card has-details" data-tags="dessert quick" data-code="DKaIGcVSqkY">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/basicswithbails/" target="_blank">@basicswithbails</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DKaIGcVSqkY/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Espresso Overnight Oats</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      <div class="card-body"><div class="section"><h4>Zutaten</h4><ul><li>1/2 cup Haferflocken</li><li>1 TL Chia-Samen</li><li>1/2 Scoop Vanille-Proteinpulver</li><li>2 Shots Espresso</li><li>1/4 cup Mandelmilch</li><li>2 EL weiÃe Schokolade</li><li>1/3 cup griechisches Joghurt</li><li>1 EL Espresso</li><li>Kakaopulver zum Servieren</li></ul></div><div class="section"><h4>Zubereitung</h4><ol><li>1. Haferflocken, Chia, Protein, Espresso, Mandelmilch mischen und kÃ¼hlen.</li><li>2. WeiÃe Schokolade schmelzen, mit Joghurt und Espresso verrÃ¼hren.</li><li>3. Ganache Ã¼ber Haferflocken geben, mindestens 4h kÃ¼hlen.</li><li>4. Morgens mit Kakaopulver bestÃ¤uben.</li></ol></div></div>
+    </div>
+
+    <div class="recipe-card " data-tags="main" data-code="DL7bHLVuqm1">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/seans_pizza/" target="_blank">@seans_pizza</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DL7bHLVuqm1/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Chicken Tender Pizza Sandwich</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert" data-code="DL2X3GKR6HS">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/kitchen_bythesea/" target="_blank">@kitchen_bythesea</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DL2X3GKR6HS/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Tiramisu Brownies (Browniesu)</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="dessert quick" data-code="DJgbHYpofpP">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/boredoflunch/" target="_blank">@boredoflunch</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DJgbHYpofpP/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Healthy Peanut Butter Chocolate Magnums</h3>
+        <div class="tags"><span class="tag tag-dessert">ð° Dessert</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="bread quick" data-code="DJOTviTtxR8">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DJOTviTtxR8/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Grillteig</h3>
+        <div class="tags"><span class="tag tag-bread">ð Brot & GebÃ¤ck</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="salad quick" data-code="DKNGR2vMsmu">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/liliyummy/" target="_blank">@liliyummy</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DKNGR2vMsmu/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Erdbeeren auf Burrata</h3>
+        <div class="tags"><span class="tag tag-salad">ð¥ Salat</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+
+    <div class="recipe-card " data-tags="main quick" data-code="DJt9KdkM00f">
+      <div class="card-header">
+        <div class="card-meta">
+          <a class="owner" href="https://www.instagram.com/loredanachantal/" target="_blank">@loredanachantal</a>
+          <a class="ig-link" href="https://www.instagram.com/p/DJt9KdkM00f/" target="_blank">ð¸ Post ansehen</a>
+        </div>
+        <h3 class="recipe-title">Loredanas Rezept</h3>
+        <div class="tags"><span class="tag tag-main">ð½ï¸ Hauptgericht</span><span class="tag tag-quick">â¡ Schnell</span></div>
+      </div>
+      
+    </div>
+      <div class="no-results hidden" id="no-results">Keine Rezepte gefunden ð</div>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.recipe-card');
+    const grid = document.getElementById('recipe-grid');
+    const noResults = document.getElementById('no-results');
+    const visibleCount = document.getElementById('visible-count');
+    let activeTag = 'all';
+    let searchText = '';
+
+    function update() {
+      let visible = 0;
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        const title = card.querySelector('.recipe-title')?.textContent.toLowerCase() || '';
+        const owner = card.querySelector('.owner')?.textContent.toLowerCase() || '';
+        const tagMatch = activeTag === 'all' || tags.split(' ').includes(activeTag);
+        const searchMatch = !searchText || title.includes(searchText) || owner.includes(searchText) || tags.includes(searchText);
+        const show = tagMatch && searchMatch;
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      visibleCount.textContent = visible;
+      noResults.classList.toggle('hidden', visible > 0);
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeTag = btn.dataset.tag;
+        update();
+      });
+    });
+
+    document.getElementById('search-input').addEventListener('input', e => {
+      searchText = e.target.value.toLowerCase().trim();
+      update();
+    });
+  </script>
 </body>
 </html>
