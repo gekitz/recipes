@@ -26,6 +26,11 @@
     .recipe-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07); transition: transform 0.15s, box-shadow 0.15s; }
     .recipe-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
     .recipe-card.hidden { display: none; }
+
+    /* Instagram embed at top of card */
+    .embed-wrap { width: 100%; background: #fafafa; }
+    .embed-wrap iframe { width: 100%; min-height: 400px; border: none; display: block; }
+
     .card-header { padding: 1.1rem 1.2rem 0.8rem; }
     .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
     .owner { color: #e8603c; font-size: 0.82rem; font-weight: 600; text-decoration: none; }
@@ -42,12 +47,6 @@
     .tag-vegan { background: #e8f5e9; color: #1b5e20; }
     .tag-vegetarian { background: #f3e5f5; color: #6a1b9a; }
     .tag-quick { background: #e3f2fd; color: #1565c0; }
-
-    /* Preview section */
-    .preview-wrap { padding: 0 1.2rem 0.8rem; }
-    .preview-btn { width: 100%; padding: 0.5rem; background: #f8f5f0; border: 1.5px dashed #ddd; border-radius: 8px; color: #888; font-size: 0.83rem; cursor: pointer; transition: all 0.15s; }
-    .preview-btn:hover { border-color: #e8603c; color: #e8603c; background: #fff5f2; }
-    .embed-container iframe { width: 100%; border: none; border-radius: 8px; min-height: 420px; }
 
     /* Collapsible sections */
     .card-body { padding: 0 1.2rem 1rem; border-top: 1px solid #f5f5f5; }
@@ -93,6 +92,7 @@
     <div class="grid" id="recipe-grid">
       
     <div class="recipe-card has-details" data-tags="main" data-code="DWPMyWSiFzA">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWPMyWSiFzA/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
@@ -101,14 +101,11 @@
         <h3 class="recipe-title">Mediterranean Ground Beef Flatbread with Hot Honey Feta Cream</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWPMyWSiFzA')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(23)</span></summary><ul><li>500g ground beef</li><li>2 tbsp olive oil</li><li>3 cloves garlic, minced</li><li>1 small onion, finely chopped</li><li>1 tsp paprika</li><li>1 tsp ground cumin</li><li>1/2 tsp ground coriander</li><li>1 tsp dried oregano</li><li>1/2 tsp chili flakes</li><li>1 tsp salt</li><li>1/2 tsp black pepper</li><li>1 cup Greek yogurt</li><li>1/2 cup feta cheese, crumbled</li><li>2 tbsp honey</li><li>1-2 tsp chili flakes</li><li>2 cloves garlic, finely grated</li><li>1 tbsp lemon juice</li><li>1 tbsp olive oil</li><li>3-4 flatbreads or naan</li><li>1/2 cup cherry tomatoes, halved</li><li>1/2 cucumber, diced</li><li>1/4 red onion, thinly sliced</li><li>Fresh parsley or mint, chopped</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(7 Schritte)</span></summary><ol><li>Olive oil in Pfanne erhitzen, Zwiebel weich dünsten, Knoblauch 30 Sek. anbraten. Hackfleisch zugeben und durchbraten.</li><li>Paprika, Cumin, Koriander, Oregano, Chiliflocken, Salz und Pfeffer zugeben. 2-3 Min. köcheln lassen.</li><li>Für Hot Honey Feta Cream: Joghurt, Feta, Honig, Chiliflocken, Knoblauch, Zitronensaft und Olivenöl verrühren.</li><li>Flatbreads mit Olivenöl bestreichen und in Pfanne oder Ofen anwärmen.</li><li>Feta Cream großzügig auf Flatbreads verteilen, warmes Hackfleisch darauf geben.</li><li>Mit Tomaten, Gurke, roter Zwiebel und frischen Kräutern toppen.</li><li>Sofort warm servieren.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="salad vegetarian" data-code="DW1tqpkDP7S">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DW1tqpkDP7S/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/wholesome.cravings/" target="_blank">@wholesome.cravings</a>
@@ -117,14 +114,11 @@
         <h3 class="recipe-title">Honey Halloumi Quinoa Salad</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DW1tqpkDP7S')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(14)</span></summary><ul><li>Cooked quinoa</li><li>Cooked chickpeas</li><li>Red onion</li><li>Apple cider vinegar</li><li>1 avocado</li><li>Cucumbers</li><li>Pistachios</li><li>Fresh mint & parsley</li><li>Halloumi</li><li>Honey</li><li>Olive oil</li><li>Lemon juice</li><li>Dijon mustard</li><li>Salt, pepper</li></ul></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main" data-code="DW1fsirDOhi">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DW1fsirDOhi/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kuechendeern/" target="_blank">@kuechendeern</a>
@@ -133,14 +127,11 @@
         <h3 class="recipe-title">Chicken Chukauni (Nepal Style)</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DW1fsirDOhi')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(16)</span></summary><ul><li>800g Hähnchenschenkel (ohne Knochen) oder Hähnchenbrustfilet</li><li>3 EL neutrales Öl</li><li>2 TL Salz</li><li>1 TL Pfeffer</li><li>1 TL Kurkuma</li><li>1 TL Cumin (Kreuzkümmel)</li><li>1 TL Koriandergewürz</li><li>1/2 TL Chilipulver</li><li>2 TL Ingwerpaste</li><li>2 TL Knoblauchpaste</li><li>1 TL Zucker</li><li>3 rote Zwiebeln</li><li>1 Handvoll frischer Koriander</li><li>1-3 grüne Chilis</li><li>1 Zitrone</li><li>Joghurt Topping: 1 EL Öl, 1 TL Kurkuma, 1 TL Chilipulver, 500g griechischer Joghurt</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(4 Schritte)</span></summary><ol><li>Hähnchen in mundgerechte Stücke schneiden und im heißen Öl anbraten. Gewürze, Ingwer und Knoblauch zugeben und gut vermischen.</li><li>Zwiebeln in feine Halbmonde schneiden, Koriander grob hacken, Chilis in Ringe schneiden und alles zum Hähnchen geben. Gut vermischen.</li><li>Für das Joghurt Topping: Öl erhitzen, Gewürze darin 3 Min. anrösten. Unter den Joghurt rühren und das Topping in die Pfanne gießen. Mit Zitronensaft abschmecken.</li><li>Nach Belieben mit Reis, Wraps oder Naan genießen.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main vegan vegetarian" data-code="DW0j9B_syv5">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DW0j9B_syv5/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/jen.eats.plants/" target="_blank">@jen.eats.plants</a>
@@ -149,14 +140,11 @@
         <h3 class="recipe-title">Hot Hunny Crispy Tofu Sandwich</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DW0j9B_syv5')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(5)</span></summary><ul><li>1 Block fester Tofu, in sandwichgroße Stücke geschnitten</li><li>Marinade: Sojasoße, Knoblauchpulver, Spritzer Essig</li><li>Panade: Speisestärke (Cornflour), Hefeflocken (Nutritional yeast), Salz & Pfeffer</li><li>Hot Hunny Glaze: 1 EL Chilli Crisp, 1 EL Ahornsirup, Prise Salz, Prise frischer Thymian</li><li>Gurkensalat: Gurke (gehackt), Salat (geschnitten), 2 EL Joghurt, 1 EL Mayo, 1 TL Senf, Zitronensaft, frischer Dill, Salz & Pfeffer</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(6 Schritte)</span></summary><ol><li>Tofu in Marinade (Sojasoße, Knoblauchpulver, Essig) einlegen und ziehen lassen.</li><li>Tofu in Cornflour, Hefeflocken, Salz und Pfeffer wenden.</li><li>In Öl von beiden Seiten goldbraun und knusprig braten.</li><li>Für Hot Hunny Glaze alle Zutaten vermischen.</li><li>Gurkensalat: Gurke, Salat, Joghurt, Mayo, Senf, Zitronensaft und Dill vermischen.</li><li>Sandwich zusammenstellen: Tofu mit Glaze bestreichen, mit Gurkensalat servieren.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main quick" data-code="DW0WrBAih9p">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DW0WrBAih9p/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/foodwithlove.de/" target="_blank">@foodwithlove.de</a>
@@ -165,14 +153,11 @@
         <h3 class="recipe-title">Spargel-Pasta mit Zitronen-Hollandaise</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DW0WrBAih9p')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(8)</span></summary><ul><li>Pasta nach Wahl</li><li>Frischer grüner Spargel</li><li>Kochschinken</li><li>Schalotten</li><li>Olivenöl</li><li>Sahne</li><li>Salz & Pfeffer</li><li>Zitronen-Hollandaise (selbstgemacht oder Fertigvariante)</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(4 Schritte)</span></summary><ol><li>Pasta al dente kochen.</li><li>Schalotten dünsten, Spargelstücke goldbraun anbraten und Schinken kurz mitbraten.</li><li>Zitronen-Hollandaise cremig unterrühren.</li><li>Alles sanft vermengen, Pasta unterheben und genießen.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="salad quick vegetarian" data-code="DWbCDd7jKQf">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWbCDd7jKQf/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/heute.keine.zeit/" target="_blank">@heute.keine.zeit</a>
@@ -181,14 +166,11 @@
         <h3 class="recipe-title">Orecchiette-Salat mit Rucola und Joghurt-Basilikum-Dressing</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span><span class="tag tag-quick">⚡ Schnell</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWbCDd7jKQf')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(6)</span></summary><ul><li>200g Orecchiette</li><li>125g Rucola</li><li>1 Handvoll getrocknete Tomaten</li><li>1 Avocado</li><li>Feta nach Belieben</li><li>Dressing: Joghurt, 2 EL Olivenöl, 1 TL Honig, 1 Handvoll Basilikum, Salz, Chili, Saft einer halben Zitrone</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(8 Schritte)</span></summary><ol><li>Orecchiette kochen und danach kurz abkühlen lassen, bis sie nur noch lauwarm sind.</li><li>Rucola in eine große Schüssel geben.</li><li>Die Orecchiette darauf verteilen.</li><li>Getrocknete Tomaten klein schneiden und dazugeben.</li><li>Avocado würfeln und ebenfalls in die Schüssel geben.</li><li>Feta darüber bröseln.</li><li>Für das Dressing: Joghurt, Olivenöl, Honig, Basilikum, Salz, Chili und Zitronensaft mixen oder gut verrühren.</li><li>Dressing über den Salat geben, alles vermengen und fertig.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main" data-code="DVZM8hZjFhD">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVZM8hZjFhD/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/hopecrosby_eats/" target="_blank">@hopecrosby_eats</a>
@@ -197,14 +179,11 @@
         <h3 class="recipe-title">Nacho Style Hot Honey Taco Beef Bowls</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVZM8hZjFhD')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(12)</span></summary><ul><li>4 Süßkartoffeln, in Scheiben geschnitten</li><li>Taco Gewürz (1/4 für Süßkartoffeln)</li><li>Knoblauchpulver & Chiliflocken</li><li>Olivenöl</li><li>25g Cheddar</li><li>300g Rinderhackfleisch (5% Fett)</li><li>1 Pck. Taco Gewürz</li><li>1 EL Tomatenmark</li><li>50ml Wasser</li><li>1 Avocado</li><li>4 EL Hüttenkäse</li><li>3 EL Hot Honey</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(5 Schritte)</span></summary><ol><li>Süßkartoffeln mit Gewürzen und Öl in den Airfryer geben, 30 Min. bei 185°C kochen. Zur Hälfte schütteln.</li><li>Hackfleisch in geölter Pfanne anbraten. Taco Gewürz und Tomatenmark zugeben, mit Wasser aufgießen und 10 Min. köcheln.</li><li>Avocado mit Salz zerdrücken.</li><li>Süßkartoffeln anrichten, Käse drüber und 30 Sek. in der Mikrowelle schmelzen.</li><li>Mit Hackfleisch, Guacamole und Hüttenkäse toppen. Mit Hot Honey, Chiliflocken und Petersilie servieren.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main vegan vegetarian quick" data-code="DWwNtKKoCm9">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWwNtKKoCm9/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -213,14 +192,11 @@
         <h3 class="recipe-title">Crispy Chili Peanut Udon One-Pot</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWwNtKKoCm9')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(16)</span></summary><ul><li>400g Udon</li><li>100g Brokkoli</li><li>200g Tempeh (gebraten)</li><li>150g Wok-Gemuese</li><li>160g veganes Chicken (gebraten)</li><li>30g Spinat</li><li>60g Erdnussbutterpulver</li><li>75ml Wasser</li><li>2 EL Sojasauce</li><li>2 EL Ahornsirup</li><li>1 EL Crispy Chili Oel</li><li>Saft 1/2 Limette</li><li>250ml light Kokosmilch</li><li>200ml Wasser</li><li>2 EL Sojasauce</li><li>1 TL Currypaste</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(3 Schritte)</span></summary><ol><li>Alle Zutaten fuer die Erdnusssosse vermischen und zur Seite stellen.</li><li>Alle weiteren Zutaten in eine Pfanne geben, mit Deckel ca. 5-7 Min koecheln bis Brokkoli gar ist.</li><li>Geniessen.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="bread vegan vegetarian" data-code="DWd0DWJjLCj">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWd0DWJjLCj/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
@@ -229,14 +205,11 @@
         <h3 class="recipe-title">Bärlauch-Dinkelweckerl</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWd0DWJjLCj')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(6)</span></summary><ul><li>200g Dinkelmehl</li><li>100g Dinkelvollkornmehl</li><li>6g Salz</li><li>3g frische Hefe (oder 1,2g Trockenhehe)</li><li>230ml Wasser</li><li>50g Bärlauch (geschnitten)</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(5 Schritte)</span></summary><ol><li>Alles in eine Schüssel geben und vermengen bis das Mehl gebunden ist.</li><li>Teig in geölten Behälter geben, abdecken, 16-24h im Kühlschrank.</li><li>Teig kalt verarbeiten: Portionen mit Löffel aufs Backblech geben.</li><li>Bei 230 Grad mit Dampf ca. 20 Min backen bis goldbraun.</li><li>Auskühlen und frisch genießen.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main vegan vegetarian quick" data-code="DVttwLdjQrM">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVttwLdjQrM/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/grownourished/" target="_blank">@grownourished</a>
@@ -245,14 +218,11 @@
         <h3 class="recipe-title">Crispy Tofu Nuggets</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVttwLdjQrM')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(8)</span></summary><ul><li>400g Tofu</li><li>2 EL Sojasauce</li><li>1 TL Knoblauchpulver</li><li>1 TL Zwiebelpulver</li><li>1 TL Paprikapulver</li><li>1 EL Rapsöl (geschmacksneutral)</li><li>2 EL Speisestärke</li><li>Salz und Pfeffer</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(3 Schritte)</span></summary><ol><li>Den Tofu in gesalzenem Wasser 5 Min kochen und abkühlen lassen.</li><li>Mit Sojasoße, Gewürzen, Rapsöl und Speisestärke vermischen.</li><li>Bei 180 Grad im Airfryer ca. 15 Min backen.</li></ol></details></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DWdnnpujcZq">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWdnnpujcZq/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/antonikocht/" target="_blank">@antonikocht</a>
@@ -261,14 +231,11 @@
         <h3 class="recipe-title">Shakshuka</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWdnnpujcZq')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DWRlh50CKYV">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWRlh50CKYV/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/oksi_sole/" target="_blank">@oksi_sole</a>
@@ -277,14 +244,11 @@
         <h3 class="recipe-title">Pappardelle al Ragù Toscano al Forno</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWRlh50CKYV')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="salad" data-code="DV_10RHjsaD">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DV_10RHjsaD/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/julshealthyway/" target="_blank">@julshealthyway</a>
@@ -293,14 +257,11 @@
         <h3 class="recipe-title">Proteinreicher Brokkoli-Quinoa-Salat mit Erdnussdressing</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DV_10RHjsaD')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DWJZringpNS">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWJZringpNS/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/liliyummy/" target="_blank">@liliyummy</a>
@@ -309,14 +270,11 @@
         <h3 class="recipe-title">Gerösteter Spargel auf Burrata</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWJZringpNS')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DWJKn45jMlP">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWJKn45jMlP/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/darmfreundliche_rezepte/" target="_blank">@darmfreundliche_rezepte</a>
@@ -325,14 +283,11 @@
         <h3 class="recipe-title">Darmfreundliches Gericht in 20 Minuten</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWJKn45jMlP')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="salad" data-code="DWCG7vdt4G9">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DWCG7vdt4G9/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/tobias.seitle/" target="_blank">@tobias.seitle</a>
@@ -341,14 +296,11 @@
         <h3 class="recipe-title">Mediterraner Linsensalat</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DWCG7vdt4G9')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DV6WRu6CIlK">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DV6WRu6CIlK/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/nachofeld/" target="_blank">@nachofeld</a>
@@ -357,14 +309,11 @@
         <h3 class="recipe-title">Jerk Chicken</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DV6WRu6CIlK')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread" data-code="DV1ceL-jaNe">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DV1ceL-jaNe/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/___socfit/" target="_blank">@___socfit</a>
@@ -373,14 +322,11 @@
         <h3 class="recipe-title">Low Carb Brötchen ohne Mehl</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DV1ceL-jaNe')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DVUZ0TGEVaC">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVUZ0TGEVaC/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/grillvaultbbq/" target="_blank">@grillvaultbbq</a>
@@ -389,14 +335,11 @@
         <h3 class="recipe-title">Shrimp Tacos mit Ananas Pico De Gallo</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVUZ0TGEVaC')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DVd8QSXiJmD">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVd8QSXiJmD/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/motioncooking/" target="_blank">@motioncooking</a>
@@ -405,14 +348,11 @@
         <h3 class="recipe-title">Türkische Pide mit Beef & Cheese</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVd8QSXiJmD')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian quick" data-code="DT0e-PcDVTi">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DT0e-PcDVTi/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/dr.luisawerner/" target="_blank">@dr.luisawerner</a>
@@ -421,14 +361,11 @@
         <h3 class="recipe-title">Maiswrap</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DT0e-PcDVTi')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DVOl8mECNFW">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVOl8mECNFW/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ayline.ea/" target="_blank">@ayline.ea</a>
@@ -437,14 +374,11 @@
         <h3 class="recipe-title">Smoky Chipotle Chicken Wrap</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVOl8mECNFW')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DVOW9YpjQ_r">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVOW9YpjQ_r/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/dishingouthealth/" target="_blank">@dishingouthealth</a>
@@ -453,14 +387,11 @@
         <h3 class="recipe-title">25 Minute Mediterranean Halloumi Pitas</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVOW9YpjQ_r')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread" data-code="DVNxLMjiCNw">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVNxLMjiCNw/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/nadiya.nature.life/" target="_blank">@nadiya.nature.life</a>
@@ -469,14 +400,11 @@
         <h3 class="recipe-title">Knuspriges Weizen-Sauerteigbrot</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVNxLMjiCNw')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DTIveqcjIGL">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTIveqcjIGL/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kevin_elstner/" target="_blank">@kevin_elstner</a>
@@ -485,14 +413,11 @@
         <h3 class="recipe-title">Low Carb Lahmacun</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTIveqcjIGL')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DVELU01jEsz">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVELU01jEsz/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/jadehcooks/" target="_blank">@jadehcooks</a>
@@ -501,14 +426,11 @@
         <h3 class="recipe-title">Tuscan Turkey Meatballs</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVELU01jEsz')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DVMMroQDErA">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVMMroQDErA/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/lukas.krappe/" target="_blank">@lukas.krappe</a>
@@ -517,14 +439,11 @@
         <h3 class="recipe-title">Sweet Potato Smash Burger</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVMMroQDErA')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DVJ5REUDWgH">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DVJ5REUDWgH/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/___socfit/" target="_blank">@___socfit</a>
@@ -533,14 +452,11 @@
         <h3 class="recipe-title">Schnelles Skyr-Brot</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DVJ5REUDWgH')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread" data-code="DTXx14IiLS3">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTXx14IiLS3/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/recipeincaption/" target="_blank">@recipeincaption</a>
@@ -549,14 +465,11 @@
         <h3 class="recipe-title">Sauerteig Weizenbrot</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTXx14IiLS3')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DU4DisjAes7">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DU4DisjAes7/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kevinelstner/" target="_blank">@kevinelstner</a>
@@ -565,14 +478,11 @@
         <h3 class="recipe-title">Protein Overnight Oats</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DU4DisjAes7')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegan vegetarian" data-code="DUlgR9xDDPx">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUlgR9xDDPx/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/herbifoods/" target="_blank">@herbifoods</a>
@@ -581,14 +491,11 @@
         <h3 class="recipe-title">Tofu Smashburgers</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUlgR9xDDPx')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main salad" data-code="DTQXEDnAjMF">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTQXEDnAjMF/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/liliyummy/" target="_blank">@liliyummy</a>
@@ -597,14 +504,11 @@
         <h3 class="recipe-title">Knuspriger Lachs-Gurken-Salat</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-salad">🥗 Salat</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTQXEDnAjMF')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DUOucPBiKAI">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUOucPBiKAI/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
@@ -613,14 +517,11 @@
         <h3 class="recipe-title">Lemon-Garlic Chicken Pitas</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUOucPBiKAI')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DU2rRACDJ_C">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DU2rRACDJ_C/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/the_classy_taste/" target="_blank">@the_classy_taste</a>
@@ -629,14 +530,11 @@
         <h3 class="recipe-title">Sushi-Paradies in Graz</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DU2rRACDJ_C')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DU3g0OVjdOp">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DU3g0OVjdOp/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/omricooks/" target="_blank">@omricooks</a>
@@ -645,14 +543,11 @@
         <h3 class="recipe-title">Dumpling Tacos</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DU3g0OVjdOp')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DU0ktQPCEJ0">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DU0ktQPCEJ0/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -661,14 +556,11 @@
         <h3 class="recipe-title">Mediterranean Chicken Stir Fry</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DU0ktQPCEJ0')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DUi9Z65gUTM">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUi9Z65gUTM/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/munchinwithmaddie_/" target="_blank">@munchinwithmaddie_</a>
@@ -677,14 +569,11 @@
         <h3 class="recipe-title">Creamy Cajun Salmon Orzo</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUi9Z65gUTM')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DUwk8fAiHQk">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUwk8fAiHQk/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -693,14 +582,11 @@
         <h3 class="recipe-title">Mediterranean Lemon Garlic Aioli Burger</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUwk8fAiHQk')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DUuAVIHCAGj">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUuAVIHCAGj/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -709,14 +595,11 @@
         <h3 class="recipe-title">One-Pot Shawarma Chicken and Rice</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUuAVIHCAGj')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DUlXgZZiMqR">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUlXgZZiMqR/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/foodieholly/" target="_blank">@foodieholly</a>
@@ -725,14 +608,11 @@
         <h3 class="recipe-title">Smashed Dumpling Tacos</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUlXgZZiMqR')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DUgb013jFrE">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUgb013jFrE/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
@@ -741,14 +621,11 @@
         <h3 class="recipe-title">Ofen-Wrap-Spieße mit Halloumi</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUgb013jFrE')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DT0CJ8FCETD">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DT0CJ8FCETD/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/jadecarolan_/" target="_blank">@jadecarolan_</a>
@@ -757,14 +634,11 @@
         <h3 class="recipe-title">Gochujang Honey Halloumi Gyros</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DT0CJ8FCETD')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian quick" data-code="DTvX2YjCA0u">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTvX2YjCA0u/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/foodieholly/" target="_blank">@foodieholly</a>
@@ -773,14 +647,11 @@
         <h3 class="recipe-title">Halloumi Shawarma Wraps</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTvX2YjCA0u')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="salad vegan vegetarian" data-code="DUizOXwiBY_">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUizOXwiBY_/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -789,14 +660,11 @@
         <h3 class="recipe-title">Virale Gemüserolle</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUizOXwiBY_')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DUZfDFZiOzH">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUZfDFZiOzH/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -805,14 +673,11 @@
         <h3 class="recipe-title">Crispy Chicken Schnitzel im Wrap</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUZfDFZiOzH')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DTf8jcaCM9h">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTf8jcaCM9h/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -821,14 +686,11 @@
         <h3 class="recipe-title">Grilled Zucchini & Feta Chickpea Wrap</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTf8jcaCM9h')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DTwPmwUiHMd">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTwPmwUiHMd/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -837,14 +699,11 @@
         <h3 class="recipe-title">Greek Chicken Souvlaki Bowls</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTwPmwUiHMd')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DUGhqANjDuu">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUGhqANjDuu/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
@@ -853,14 +712,11 @@
         <h3 class="recipe-title">Greek Lamb Souvlaki Flatbread</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUGhqANjDuu')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DTkLxBSjKq3">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTkLxBSjKq3/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/piaundhalloumi/" target="_blank">@piaundhalloumi</a>
@@ -869,14 +725,11 @@
         <h3 class="recipe-title">Halloumi Tacos mit Mango-Salsa</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTkLxBSjKq3')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DT8CS5UChPq">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DT8CS5UChPq/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/jadecarolan_/" target="_blank">@jadecarolan_</a>
@@ -885,14 +738,11 @@
         <h3 class="recipe-title">Honey Soy Crispy Chilli Beef</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DT8CS5UChPq')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="salad vegan" data-code="DTxv6ilDXB4">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTxv6ilDXB4/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/dishingouthealth/" target="_blank">@dishingouthealth</a>
@@ -901,14 +751,11 @@
         <h3 class="recipe-title">Shaved Carrot Salad mit Citrus Miso-Ginger Dressing</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span><span class="tag tag-vegan">🌱 Vegan</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTxv6ilDXB4')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DUBb4GZDArq">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUBb4GZDArq/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/darmfreundliche_rezepte/" target="_blank">@darmfreundliche_rezepte</a>
@@ -917,14 +764,11 @@
         <h3 class="recipe-title">Cremiger Himbeer Cheesecake</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUBb4GZDArq')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main salad quick" data-code="DRWUDtKiZ42">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRWUDtKiZ42/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/aathirasethumadhavan/" target="_blank">@aathirasethumadhavan</a>
@@ -933,14 +777,11 @@
         <h3 class="recipe-title">High-Protein Comfort Meal</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-salad">🥗 Salat</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRWUDtKiZ42')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DUFRVjeEWjH">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DUFRVjeEWjH/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/themealprepking/" target="_blank">@themealprepking</a>
@@ -949,14 +790,11 @@
         <h3 class="recipe-title">Protein Egg Fried Rice</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DUFRVjeEWjH')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DT-pC7MCKrg">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DT-pC7MCKrg/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -965,14 +803,11 @@
         <h3 class="recipe-title">Tuscan Chicken Pasta Bake</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DT-pC7MCKrg')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DTGQDH4jH4q">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTGQDH4jH4q/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/whatlukedidnext/" target="_blank">@whatlukedidnext</a>
@@ -981,14 +816,11 @@
         <h3 class="recipe-title">Nduja Aubergines with Hot Honey</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTGQDH4jH4q')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegan" data-code="DTfyumyCAkO">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTfyumyCAkO/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -997,14 +829,11 @@
         <h3 class="recipe-title">Spaghetti al Forno</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTfyumyCAkO')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DTapKVKCKW8">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTapKVKCKW8/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/thecookingrx/" target="_blank">@thecookingrx</a>
@@ -1013,14 +842,11 @@
         <h3 class="recipe-title">Creamy Mushroom & White Bean Skillet</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTapKVKCKW8')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DS5bYy5iImL">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DS5bYy5iImL/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/liliyummy/" target="_blank">@liliyummy</a>
@@ -1029,14 +855,11 @@
         <h3 class="recipe-title">Honig-Senf Chicken Bowl</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DS5bYy5iImL')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DTDkOXLjO_-">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTDkOXLjO_-/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/thecookingrx/" target="_blank">@thecookingrx</a>
@@ -1045,14 +868,11 @@
         <h3 class="recipe-title">Creamy Tomato Chickpea Stew</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTDkOXLjO_-')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegan quick" data-code="DTF1DwJCKEq">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DTF1DwJCKEq/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -1061,14 +881,11 @@
         <h3 class="recipe-title">Quick & Creamy Gnocchi One-Pot</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DTF1DwJCKEq')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DS75C1ijI6O">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DS75C1ijI6O/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/mimicookss/" target="_blank">@mimicookss</a>
@@ -1077,14 +894,11 @@
         <h3 class="recipe-title">Steamed Rice Paper Dumplings</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DS75C1ijI6O')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegan" data-code="DS9_ty0CBPn">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DS9_ty0CBPn/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -1093,14 +907,11 @@
         <h3 class="recipe-title">Cremige Spinat-Champignon Pasta</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DS9_ty0CBPn')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DRsW7uIjRvD">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRsW7uIjRvD/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/einfachbacken/" target="_blank">@einfachbacken</a>
@@ -1109,14 +920,11 @@
         <h3 class="recipe-title">Spekulatius-Himbeer-Dessert</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRsW7uIjRvD')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread" data-code="DSYZMA6kggv">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DSYZMA6kggv/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/recipeincaption/" target="_blank">@recipeincaption</a>
@@ -1125,14 +933,11 @@
         <h3 class="recipe-title">Sauerteig Weizenbrot</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DSYZMA6kggv')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegan" data-code="DMnmLOPoLjg">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DMnmLOPoLjg/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/joandbart/" target="_blank">@joandbart</a>
@@ -1141,14 +946,11 @@
         <h3 class="recipe-title">Spicy Sun-Dried Tomato Dip</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DMnmLOPoLjg')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DSYJgI4kuvj">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DSYJgI4kuvj/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/theblessedmamaof4/" target="_blank">@theblessedmamaof4</a>
@@ -1157,14 +959,11 @@
         <h3 class="recipe-title">High-Protein Cheesy Tortilla Bake</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DSYJgI4kuvj')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DR2a2ZpjZpg">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DR2a2ZpjZpg/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/bartcooks_/" target="_blank">@bartcooks_</a>
@@ -1173,14 +972,11 @@
         <h3 class="recipe-title">Veggie Tagliatelle</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DR2a2ZpjZpg')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DSYISJ_jBCG">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DSYISJ_jBCG/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/themealprepking/" target="_blank">@themealprepking</a>
@@ -1189,14 +985,11 @@
         <h3 class="recipe-title">One-Pan Creamy Tomato Pasta</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DSYISJ_jBCG')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DSCheUZDNQb">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DSCheUZDNQb/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kcallicious/" target="_blank">@kcallicious</a>
@@ -1205,14 +998,11 @@
         <h3 class="recipe-title">High-Protein Wrap mit Thunfisch</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DSCheUZDNQb')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert quick" data-code="DR4RsYsDCZE">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DR4RsYsDCZE/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kcallicious/" target="_blank">@kcallicious</a>
@@ -1221,14 +1011,11 @@
         <h3 class="recipe-title">Apfel Taler</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DR4RsYsDCZE')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DSBUsBHkrYh">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DSBUsBHkrYh/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/overall.eats/" target="_blank">@overall.eats</a>
@@ -1237,14 +1024,11 @@
         <h3 class="recipe-title">Peanut Chili Oil Noodles</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DSBUsBHkrYh')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DSD_nj7iJhB">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DSD_nj7iJhB/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
@@ -1253,14 +1037,11 @@
         <h3 class="recipe-title">High-Protein Pizza Toast</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DSD_nj7iJhB')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DSOItVwiC4D">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DSOItVwiC4D/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
@@ -1269,14 +1050,11 @@
         <h3 class="recipe-title">One Pot Creamy Chicken Pasta</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DSOItVwiC4D')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DSFt8_iiCsg">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DSFt8_iiCsg/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -1285,14 +1063,11 @@
         <h3 class="recipe-title">Spiced Lamb Kofta Bowl</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DSFt8_iiCsg')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DR9G1OYjG6N">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DR9G1OYjG6N/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
@@ -1301,14 +1076,11 @@
         <h3 class="recipe-title">Kaiserschmarrn</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DR9G1OYjG6N')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DRvI9VuksJ3">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRvI9VuksJ3/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/yana.and.the.city/" target="_blank">@yana.and.the.city</a>
@@ -1317,14 +1089,11 @@
         <h3 class="recipe-title">Snowfall Spritz Cocktail</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRvI9VuksJ3')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DRxTtaqjHqb">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRxTtaqjHqb/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
@@ -1333,14 +1102,11 @@
         <h3 class="recipe-title">Crispy Korean Chicken Burger</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRxTtaqjHqb')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DRxakRbiOMw">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRxakRbiOMw/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -1349,14 +1115,11 @@
         <h3 class="recipe-title">Gochujang Noodles</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRxakRbiOMw')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert vegan" data-code="DNlin0BCP6A">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DNlin0BCP6A/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -1365,14 +1128,11 @@
         <h3 class="recipe-title">Vegane Protein Waffeln</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span><span class="tag tag-vegan">🌱 Vegan</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DNlin0BCP6A')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DQo_DH2kVsZ">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQo_DH2kVsZ/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/burger.world/" target="_blank">@burger.world</a>
@@ -1381,14 +1141,11 @@
         <h3 class="recipe-title">Chicken Tikka Baguette</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQo_DH2kVsZ')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DRGcXwWCkad">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRGcXwWCkad/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/easymediterraneanrecipes/" target="_blank">@easymediterraneanrecipes</a>
@@ -1397,14 +1154,11 @@
         <h3 class="recipe-title">Creamy Tomato Basil Pasta</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRGcXwWCkad')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DQIHkzjEaDV">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQIHkzjEaDV/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/foodieholly/" target="_blank">@foodieholly</a>
@@ -1413,14 +1167,11 @@
         <h3 class="recipe-title">Strawberry Crumble</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQIHkzjEaDV')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DOwAfrwjNlX">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DOwAfrwjNlX/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
@@ -1429,14 +1180,11 @@
         <h3 class="recipe-title">Wiener Schnitzel</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DOwAfrwjNlX')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegan quick" data-code="DRw_-s6jJ4K">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRw_-s6jJ4K/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -1445,14 +1193,11 @@
         <h3 class="recipe-title">Cremige Tomaten-Pasta</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRw_-s6jJ4K')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="bread quick" data-code="DPEUAX3CLKn">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPEUAX3CLKn/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kilic_story/" target="_blank">@kilic_story</a>
@@ -1461,14 +1206,11 @@
         <h3 class="recipe-title">Olivenbrot ohne kneten</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPEUAX3CLKn')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(5)</span></summary><ul><li>400g Weizenmehl T550 oder Dinkelmehl T630</li><li>1 1/2 TL Salz</li><li>3/4 Pck Trockenhefe</li><li>320ml lauwarmes Wasser</li><li>120g Oliven</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(6 Schritte)</span></summary><ol><li>1. Teig zubereiten in 1h ruhen lassen.</li><li>2. Mit nasser Hand vier Ecken in die Mitte falten.</li><li>3. Teig abgedeckt 30 min ruhen lassen.</li><li>4. Schritt 2 und 3 zweimal wiederholen.</li><li>5. Teig zu Kugel formen, auf Backpapier in Gusseisentopf legen.</li><li>6. Bei 230C mit Deckel 30 Min backen, dann ohne Deckel 15 Min.</li></ol></details></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DQe0a64iHjP">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQe0a64iHjP/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/leicht_gemixt/" target="_blank">@leicht_gemixt</a>
@@ -1477,14 +1219,11 @@
         <h3 class="recipe-title">Familienkruste</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQe0a64iHjP')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DQzVExhDHtK">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQzVExhDHtK/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/weizenfrei_gluecklich/" target="_blank">@weizenfrei_gluecklich</a>
@@ -1493,14 +1232,11 @@
         <h3 class="recipe-title">Anfängerbrot über Nacht</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQzVExhDHtK')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DRSVywSiGvE">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRSVywSiGvE/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/joandbart/" target="_blank">@joandbart</a>
@@ -1509,14 +1245,11 @@
         <h3 class="recipe-title">Roasted Red Peppers</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRSVywSiGvE')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DQzYTTyAuFw">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQzYTTyAuFw/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/byolyvv/" target="_blank">@byolyvv</a>
@@ -1525,14 +1258,11 @@
         <h3 class="recipe-title">Creamy Bacon Broccoli Pasta</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQzYTTyAuFw')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DRKv-0sDD8C">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRKv-0sDD8C/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/harrietrieper/" target="_blank">@harrietrieper</a>
@@ -1541,14 +1271,11 @@
         <h3 class="recipe-title">Brot-Rezept</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRKv-0sDD8C')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DRaDyYHjJUB">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRaDyYHjJUB/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
@@ -1557,14 +1284,11 @@
         <h3 class="recipe-title">Brot zum Abspeichern</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRaDyYHjJUB')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DRIENQajc27">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRIENQajc27/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/verschiedene_gerichte/" target="_blank">@verschiedene_gerichte</a>
@@ -1573,14 +1297,11 @@
         <h3 class="recipe-title">Hähnchen süß sauer</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRIENQajc27')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegan vegetarian quick" data-code="DRfAGRliIhl">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRfAGRliIhl/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -1589,14 +1310,11 @@
         <h3 class="recipe-title">Schnelles Meal-Prep Gericht</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRfAGRliIhl')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DQ1CEUJiEEd">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQ1CEUJiEEd/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kuechensinn/" target="_blank">@kuechensinn</a>
@@ -1605,14 +1323,11 @@
         <h3 class="recipe-title">Karottenkuchen mit Frischkäsecreme</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQ1CEUJiEEd')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DNwIj2cZP0h">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DNwIj2cZP0h/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/nourishing/" target="_blank">@nourishing</a>
@@ -1621,14 +1336,11 @@
         <h3 class="recipe-title">Crispy Salmon Bites</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DNwIj2cZP0h')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert quick" data-code="DQi-6trjbeu">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQi-6trjbeu/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/tobias.seitle/" target="_blank">@tobias.seitle</a>
@@ -1637,14 +1349,11 @@
         <h3 class="recipe-title">Gesunder Kaiserschmarrn</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQi-6trjbeu')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian quick" data-code="DRSGW-lDalx">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRSGW-lDalx/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/tobias.seitle/" target="_blank">@tobias.seitle</a>
@@ -1653,14 +1362,11 @@
         <h3 class="recipe-title">Miso-Nudelsuppe mit pflanzlichem Protein</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRSGW-lDalx')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DPwXp1BiHr3">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPwXp1BiHr3/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/recipe_road/" target="_blank">@recipe_road</a>
@@ -1669,14 +1375,11 @@
         <h3 class="recipe-title">Creamy Chipotle Pasta</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPwXp1BiHr3')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DQ1A9kwDMWD">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQ1A9kwDMWD/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/teichners_pizza_palace/" target="_blank">@teichners_pizza_palace</a>
@@ -1685,14 +1388,11 @@
         <h3 class="recipe-title">Homemade Wraps</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQ1A9kwDMWD')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DQP4dsPkhez">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQP4dsPkhez/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/chef.antonio.zavala/" target="_blank">@chef.antonio.zavala</a>
@@ -1701,14 +1401,11 @@
         <h3 class="recipe-title">Ragù con Rigatoni</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQP4dsPkhez')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DQwthUPjAsM">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQwthUPjAsM/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kathas_balanced_kitchen/" target="_blank">@kathas_balanced_kitchen</a>
@@ -1717,14 +1414,11 @@
         <h3 class="recipe-title">Einfaches Brotrezept</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQwthUPjAsM')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DRIDIdBiFha">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRIDIdBiFha/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/cedriklorenzen/" target="_blank">@cedriklorenzen</a>
@@ -1733,14 +1427,11 @@
         <h3 class="recipe-title">ASMR Fish Burger</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRIDIdBiFha')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DP4RhFzDLhZ">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DP4RhFzDLhZ/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
@@ -1749,14 +1440,11 @@
         <h3 class="recipe-title">Fitness-Rezept zum Abspeichern</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DP4RhFzDLhZ')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="salad quick" data-code="DP958h4CZW6">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DP958h4CZW6/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/simple.home.edit/" target="_blank">@simple.home.edit</a>
@@ -1765,14 +1453,11 @@
         <h3 class="recipe-title">Bang Bang Chicken Salad</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DP958h4CZW6')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main vegan vegetarian" data-code="DRHu8R_CEo8">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRHu8R_CEo8/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -1781,14 +1466,11 @@
         <h3 class="recipe-title">Sommerrolle mit veganem Chicken</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRHu8R_CEo8')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(4)</span></summary><ul><li>50g gekochter Reis</li><li>Gemüse nach Wahl (Möhre, Gurke, Paprika, Rotkohl)</li><li>3 Reispapierblätter</li><li>160g veganes Chicken</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(4 Schritte)</span></summary><ol><li>1. Veganes Chicken im Airfryer garen und Reis kochen.</li><li>2. Gemüse kleinschneiden.</li><li>3. Reispapierblätter überlappend auslegen und befüllen.</li><li>4. Einwickeln und genießen.</li></ol></details></div>
     </div>
 
     <div class="recipe-card " data-tags="salad vegan vegetarian" data-code="DPQ1wLFESWM">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPQ1wLFESWM/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/_plantbaes_/" target="_blank">@_plantbaes_</a>
@@ -1797,14 +1479,11 @@
         <h3 class="recipe-title">Baked Harvest Salad</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPQ1wLFESWM')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian quick" data-code="DQ1AezRjZqs">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQ1AezRjZqs/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/tobias.seitle/" target="_blank">@tobias.seitle</a>
@@ -1813,14 +1492,11 @@
         <h3 class="recipe-title">Kürbis-Feta-Pasta</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQ1AezRjZqs')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DQ_WI9cDdpm">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQ_WI9cDdpm/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/simple.home.edit/" target="_blank">@simple.home.edit</a>
@@ -1829,14 +1505,11 @@
         <h3 class="recipe-title">Peking-style Beef</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQ_WI9cDdpm')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DQTSPa8Ctue">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQTSPa8Ctue/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/herztopfliebe/" target="_blank">@herztopfliebe</a>
@@ -1845,14 +1518,11 @@
         <h3 class="recipe-title">One-Pot Tomaten-Orzo-Pasta mit Hühnchen und Spinat</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQTSPa8Ctue')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DRDbzedkt-w">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DRDbzedkt-w/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/simple.home.edit/" target="_blank">@simple.home.edit</a>
@@ -1861,14 +1531,11 @@
         <h3 class="recipe-title">Meal Prep Bowl</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DRDbzedkt-w')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DQhkGmJiJQb">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQhkGmJiJQb/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/food.by.lari/" target="_blank">@food.by.lari</a>
@@ -1877,14 +1544,11 @@
         <h3 class="recipe-title">Laris Rezept</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQhkGmJiJQb')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DQ9B_n5DLKu">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQ9B_n5DLKu/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/heute.keine.zeit/" target="_blank">@heute.keine.zeit</a>
@@ -1893,14 +1557,11 @@
         <h3 class="recipe-title">Pad Kra Pao Suppe mit Kokosmilch</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQ9B_n5DLKu')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DNxhx583j3Y">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DNxhx583j3Y/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/andyseastcoastkitchen_/" target="_blank">@andyseastcoastkitchen_</a>
@@ -1909,14 +1570,11 @@
         <h3 class="recipe-title">East Coast Kitchen Rezept</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DNxhx583j3Y')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegan vegetarian quick" data-code="DQ4cTJIjtkh">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQ4cTJIjtkh/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/vegan_high_protein/" target="_blank">@vegan_high_protein</a>
@@ -1925,14 +1583,11 @@
         <h3 class="recipe-title">Veganer Netflix-Snack</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQ4cTJIjtkh')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DQ4kWBrjDZ6">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQ4kWBrjDZ6/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/sweet.dominik/" target="_blank">@sweet.dominik</a>
@@ -1941,14 +1596,11 @@
         <h3 class="recipe-title">Cremige Kürbis-Gnocchi mit Blattspinat</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQ4kWBrjDZ6')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread" data-code="DNdwyvAswE4">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DNdwyvAswE4/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/fit_sophia_laetitia/" target="_blank">@fit_sophia_laetitia</a>
@@ -1957,14 +1609,11 @@
         <h3 class="recipe-title">Fitness-Brot zum Abspeichern</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DNdwyvAswE4')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DQEuetCjBWi">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQEuetCjBWi/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
@@ -1973,14 +1622,11 @@
         <h3 class="recipe-title">Nusszopf</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQEuetCjBWi')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DPDiUv3CCaM">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPDiUv3CCaM/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/food.by.lari/" target="_blank">@food.by.lari</a>
@@ -1989,14 +1635,11 @@
         <h3 class="recipe-title">Schmorbraten mit Möhren und Kartoffeln</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPDiUv3CCaM')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DQYkxyiiB9K">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQYkxyiiB9K/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
@@ -2005,14 +1648,11 @@
         <h3 class="recipe-title">Apfel-Zimt-Streusel</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQYkxyiiB9K')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert quick" data-code="DOTKj_viBdq">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DOTKj_viBdq/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
@@ -2021,14 +1661,11 @@
         <h3 class="recipe-title">Luftiger Pflaumenkuchen mit Zimttopping</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DOTKj_viBdq')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread" data-code="DP_6yK_jC6_">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DP_6yK_jC6_/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/einfach.hassan/" target="_blank">@einfach.hassan</a>
@@ -2037,14 +1674,11 @@
         <h3 class="recipe-title">Hassans Brotrezept</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DP_6yK_jC6_')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DPnlnTsiI0z">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPnlnTsiI0z/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/sandraskochblog/" target="_blank">@sandraskochblog</a>
@@ -2053,14 +1687,11 @@
         <h3 class="recipe-title">Sandras Rezept</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPnlnTsiI0z')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DQQ565_DNFg">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DQQ565_DNFg/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/dinnerbyben/" target="_blank">@dinnerbyben</a>
@@ -2069,14 +1700,11 @@
         <h3 class="recipe-title">Dinner by Ben</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DQQ565_DNFg')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DPZQa15AFX3">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPZQa15AFX3/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/roxyandben/" target="_blank">@roxyandben</a>
@@ -2085,14 +1713,11 @@
         <h3 class="recipe-title">Roxy and Ben Rezept</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPZQa15AFX3')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main" data-code="DAVO46VtlDk">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DAVO46VtlDk/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
@@ -2101,14 +1726,11 @@
         <h3 class="recipe-title">Schmorbraten</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DAVO46VtlDk')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(12)</span></summary><ul><li>1 kg Rinderbraten</li><li>2 große weiße Zwiebeln, halbiert</li><li>4 Knoblauchzehen, gehackt</li><li>3 EL Butterschmalz</li><li>1 EL Tomatenmark</li><li>2 EL Mehl</li><li>300ml Rotwein</li><li>500ml Rinderfond</li><li>500g kleine Kartoffeln</li><li>4 große Möhren</li><li>Salz, Pfeffer</li><li>Salbei, Lorbeerblätter</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(7 Schritte)</span></summary><ol><li>1. Bräter erhitzen, Fleisch von allen Seiten kräftig anbraten.</li><li>2. Zwiebeln und Knoblauch glasig dünsten.</li><li>3. Tomatenmark anrösten, Mehl hinzu.</li><li>4. Mit Rotwein ablöschen, einköcheln.</li><li>5. Mit Fond ablöschen, Fleisch hinein.</li><li>6. Gemüse und Kräuter hinzufügen.</li><li>7. Bei 160C ca. 2,5-3h im Ofen schmoren.</li></ol></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main" data-code="DP6sgK_AniG">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DP6sgK_AniG/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/byolyvv/" target="_blank">@byolyvv</a>
@@ -2117,14 +1739,11 @@
         <h3 class="recipe-title">Creamy Orzo mit Chicken</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DP6sgK_AniG')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(13)</span></summary><ul><li>Öl</li><li>Zwiebel</li><li>Knoblauch</li><li>Paprika, Oregano</li><li>Tomatenmark</li><li>Hähnchenbrustfilet</li><li>Orzo</li><li>Getrocknete Tomaten</li><li>Leichte Sahne</li><li>Gemüsebrühe</li><li>Salz und Pfeffer</li><li>Parmesan</li><li>Basilikum</li></ul></details></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main vegetarian quick" data-code="DP8-jjmAhPE">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DP8-jjmAhPE/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/nikis_healthyspace/" target="_blank">@nikis_healthyspace</a>
@@ -2133,14 +1752,11 @@
         <h3 class="recipe-title">Dattel-Kürbisdip</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DP8-jjmAhPE')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(2)</span></summary><ul><li>150g Frischkäse</li><li>4 EL Olivenöl</li></ul></details></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DM-OwR4stAk">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DM-OwR4stAk/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
@@ -2149,14 +1765,11 @@
         <h3 class="recipe-title">Schmorbraten (Klassisch)</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DM-OwR4stAk')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DNIvZlDtOqJ">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DNIvZlDtOqJ/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/massicooksitalian/" target="_blank">@massicooksitalian</a>
@@ -2165,14 +1778,11 @@
         <h3 class="recipe-title">Ragù alla Genovese</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DNIvZlDtOqJ')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DPrMkRKjXdi">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPrMkRKjXdi/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/i.am.never.full/" target="_blank">@i.am.never.full</a>
@@ -2181,14 +1791,11 @@
         <h3 class="recipe-title">Black Pepper Chicken</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPrMkRKjXdi')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="main vegan vegetarian quick" data-code="DMV4i_4oQnS">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DMV4i_4oQnS/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/sophsplantkitchen/" target="_blank">@sophsplantkitchen</a>
@@ -2197,14 +1804,11 @@
         <h3 class="recipe-title">Black Bean Tacos</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegan">🌱 Vegan</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DMV4i_4oQnS')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(8)</span></summary><ul><li>4 Frühlingszwiebeln</li><li>3 Knoblauchzehen</li><li>1/2 rote Chili</li><li>Gewürzmischung</li><li>Tomatenmark</li><li>Erdnussbutter</li><li>Bohnen und ihr Wasser</li><li>Limette</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(5 Schritte)</span></summary><ol><li>1. Frühlingszwiebeln, Chili, Korianderstiele 5 Min anbraten.</li><li>2. Gewürze und Knoblauch hinzufügen.</li><li>3. Tomatenmark und Erdnussbutter hinein.</li><li>4. Bohnen mit Wasser dazu, 10-15 Min einköcheln.</li><li>5. Limette ausdrücken, abschmecken.</li></ol></details></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DOtO7dFDGmw">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DOtO7dFDGmw/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/teichners_pizza_palace/" target="_blank">@teichners_pizza_palace</a>
@@ -2213,14 +1817,11 @@
         <h3 class="recipe-title">Fladenbrote</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DOtO7dFDGmw')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DM-NpolseyF">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DM-NpolseyF/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
@@ -2229,14 +1830,11 @@
         <h3 class="recipe-title">Pflaumenkuchen mit Zimttopping</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DM-NpolseyF')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread dessert" data-code="DPWMqh3jOQM">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPWMqh3jOQM/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
@@ -2245,14 +1843,11 @@
         <h3 class="recipe-title">Schoko- oder Pistaziengebäck</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPWMqh3jOQM')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DNfeTvEsQLG">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DNfeTvEsQLG/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
@@ -2261,14 +1856,11 @@
         <h3 class="recipe-title">Ginas Rezept</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DNfeTvEsQLG')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DOnEKjgCDuu">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DOnEKjgCDuu/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
@@ -2277,14 +1869,11 @@
         <h3 class="recipe-title">Ginas Rezept 2</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DOnEKjgCDuu')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DPeVGOaCByF">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPeVGOaCByF/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/gina.sandrin/" target="_blank">@gina.sandrin</a>
@@ -2293,14 +1882,11 @@
         <h3 class="recipe-title">Ginas Rezept 3</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPeVGOaCByF')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DNbYPdKtVX1">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DNbYPdKtVX1/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/teichners_pizza_palace/" target="_blank">@teichners_pizza_palace</a>
@@ -2309,14 +1895,11 @@
         <h3 class="recipe-title">Chicken Teriyaki Sandwich</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DNbYPdKtVX1')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DN6XKRvkoH3">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DN6XKRvkoH3/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/recipeincaption/" target="_blank">@recipeincaption</a>
@@ -2325,14 +1908,11 @@
         <h3 class="recipe-title">Sheet Pan Chicken Kefta Wraps</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DN6XKRvkoH3')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DPB94lTCKdq">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DPB94lTCKdq/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ottolenghi/" target="_blank">@ottolenghi</a>
@@ -2341,14 +1921,11 @@
         <h3 class="recipe-title">Burnt Aubergine with Feta and Harissa Oil</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DPB94lTCKdq')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DM8AEOHIR38">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DM8AEOHIR38/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/piaundhalloumi/" target="_blank">@piaundhalloumi</a>
@@ -2357,14 +1934,11 @@
         <h3 class="recipe-title">Lazy Lahmacun</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DM8AEOHIR38')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DLwaDMBtVJz">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DLwaDMBtVJz/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/teichners_pizza_palace/" target="_blank">@teichners_pizza_palace</a>
@@ -2373,14 +1947,11 @@
         <h3 class="recipe-title">Italienische Meatball-Bowl</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DLwaDMBtVJz')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main vegetarian" data-code="DM8MQeVoKrO">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DM8MQeVoKrO/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/joandbart/" target="_blank">@joandbart</a>
@@ -2389,14 +1960,11 @@
         <h3 class="recipe-title">Ultimate Garlic Dip</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-vegetarian">🧆 Vegetarisch</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DM8MQeVoKrO')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DKMp20qxax8">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DKMp20qxax8/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ryanmichaelcarter/" target="_blank">@ryanmichaelcarter</a>
@@ -2405,14 +1973,11 @@
         <h3 class="recipe-title">Matcha Fire Butter</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DKMp20qxax8')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card has-details" data-tags="dessert quick" data-code="DKaIGcVSqkY">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DKaIGcVSqkY/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/basicswithbails/" target="_blank">@basicswithbails</a>
@@ -2421,14 +1986,11 @@
         <h3 class="recipe-title">Espresso Overnight Oats</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DKaIGcVSqkY')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"><details class="section-details"><summary class="section-summary">Zutaten <span class="section-count">(9)</span></summary><ul><li>1/2 cup Haferflocken</li><li>1 TL Chia-Samen</li><li>1/2 Scoop Vanille-Proteinpulver</li><li>2 Shots Espresso</li><li>1/4 cup Mandelmilch</li><li>2 EL weiße Schokolade</li><li>1/3 cup griechisches Joghurt</li><li>1 EL Espresso</li><li>Kakaopulver zum Servieren</li></ul></details><details class="section-details"><summary class="section-summary">Zubereitung <span class="section-count">(4 Schritte)</span></summary><ol><li>1. Haferflocken, Chia, Protein, Espresso, Mandelmilch mischen und kühlen.</li><li>2. Weiße Schokolade schmelzen, mit Joghurt und Espresso verrühren.</li><li>3. Ganache über Haferflocken geben, mindestens 4h kühlen.</li><li>4. Morgens mit Kakaopulver bestäuben.</li></ol></details></div>
     </div>
 
     <div class="recipe-card " data-tags="main" data-code="DL7bHLVuqm1">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DL7bHLVuqm1/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/seans_pizza/" target="_blank">@seans_pizza</a>
@@ -2437,14 +1999,11 @@
         <h3 class="recipe-title">Chicken Tender Pizza Sandwich</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DL7bHLVuqm1')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert" data-code="DL2X3GKR6HS">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DL2X3GKR6HS/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/kitchen_bythesea/" target="_blank">@kitchen_bythesea</a>
@@ -2453,14 +2012,11 @@
         <h3 class="recipe-title">Tiramisu Brownies (Browniesu)</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DL2X3GKR6HS')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="dessert quick" data-code="DJgbHYpofpP">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DJgbHYpofpP/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/boredoflunch/" target="_blank">@boredoflunch</a>
@@ -2469,14 +2025,11 @@
         <h3 class="recipe-title">Healthy Peanut Butter Chocolate Magnums</h3>
         <div class="tags"><span class="tag tag-dessert">🍰 Dessert</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DJgbHYpofpP')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="bread quick" data-code="DJOTviTtxR8">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DJOTviTtxR8/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/ichmachpizza/" target="_blank">@ichmachpizza</a>
@@ -2485,14 +2038,11 @@
         <h3 class="recipe-title">Grillteig</h3>
         <div class="tags"><span class="tag tag-bread">🍞 Brot & Gebäck</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DJOTviTtxR8')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="salad quick" data-code="DKNGR2vMsmu">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DKNGR2vMsmu/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/liliyummy/" target="_blank">@liliyummy</a>
@@ -2501,14 +2051,11 @@
         <h3 class="recipe-title">Erdbeeren auf Burrata</h3>
         <div class="tags"><span class="tag tag-salad">🥗 Salat</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DKNGR2vMsmu')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
 
     <div class="recipe-card " data-tags="main quick" data-code="DJt9KdkM00f">
+      <div class="embed-wrap"><iframe src="https://www.instagram.com/p/DJt9KdkM00f/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
       <div class="card-header">
         <div class="card-meta">
           <a class="owner" href="https://www.instagram.com/loredanachantal/" target="_blank">@loredanachantal</a>
@@ -2517,10 +2064,6 @@
         <h3 class="recipe-title">Loredanas Rezept</h3>
         <div class="tags"><span class="tag tag-main">🍽️ Hauptgericht</span><span class="tag tag-quick">⚡ Schnell</span></div>
       </div>
-      <div class="preview-wrap">
-      <button class="preview-btn" onclick="loadPreview(this, 'DJt9KdkM00f')">▶ Vorschau laden</button>
-      <div class="embed-container" style="display:none"></div>
-    </div>
       <div class="card-body"></div>
     </div>
     </div>
@@ -2559,14 +2102,6 @@
     });
 
     search.addEventListener('input', updateVisibility);
-
-    function loadPreview(btn, code) {
-      const wrap = btn.parentElement;
-      const container = wrap.querySelector('.embed-container');
-      btn.style.display = 'none';
-      container.style.display = 'block';
-      container.innerHTML = '<iframe src="https://www.instagram.com/p/' + code + '/embed/" allowtransparency="true" scrolling="no" frameborder="0" loading="lazy"></iframe>';
-    }
   </script>
 </body>
 </html>
