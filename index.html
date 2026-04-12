@@ -233,7 +233,7 @@
 
     async function init() {
       try {
-        const res = await fetch('recipes_data.json');
+        const res = await fetch('recipes_data.json?v=' + Date.now(), { cache: 'no-store' });
         allRecipes = await res.json();
         buildFilterButtons(allRecipes);
         renderCards();
