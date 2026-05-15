@@ -3472,5 +3472,46 @@
     ],
     "date_saved": "2026-05-10",
     "index": 186
+  },
+  {
+    "index": 187,
+    "code": "DYNGUsCNB8F",
+    "owner": "@paulcooks.de",
+    "tags": [
+      "main",
+      "asian",
+      "thai",
+      "spargel"
+    ],
+    "title": "Pad Kra Pao mit Spargel",
+    "ingredients": [
+      "Hackfleisch (Schwein, Rind oder Geflügel)",
+      "Knoblauch (reichlich)",
+      "Chili (nach Geschmack)",
+      "Zwiebel",
+      "Eier (optional)",
+      "Thai-Basilikum",
+      "Spargel (optional)",
+      "Helle Sojasauce",
+      "Dunkle Sojasauce",
+      "Austernsauce",
+      "Fischsauce",
+      "MSG",
+      "Zucker"
+    ],
+    "preparation": [
+      "Knoblauch und Chili fein hacken bzw. mörsern.",
+      "Zwiebel in Streifen schneiden. Spargel in Stücke schneiden (falls verwendet).",
+      "In einem Wok oder einer großen Pfanne etwas Öl stark erhitzen.",
+      "Knoblauch und Chili kurz anbraten, bis sie duften.",
+      "Zwiebel zugeben und kurz mitbraten.",
+      "Hackfleisch hinzufügen und scharf anbraten, dabei mit dem Pfannenwender zerteilen.",
+      "Spargel hinzufügen und mit anbraten, bis er bissfest ist.",
+      "Sauce aus heller und dunkler Sojasauce, Austernsauce, Fischsauce, MSG und Zucker einrühren.",
+      "Alles gut vermengen und kurz einkochen lassen.",
+      "Vom Herd nehmen und großzügig Thai-Basilikum unterheben.",
+      "Optional ein Spiegelei dazu servieren, mit Reis genießen."
+    ],
+    "date_saved": "2026-05-15"
   }
 ]
