@@ -4780,5 +4780,98 @@
       "Freeze for 4 hours or overnight, then serve."
     ],
     "date_saved": "2026-07-01"
+  },
+  {
+    "index": 228,
+    "code": "DaLLVyGNkpT",
+    "owner": "@food_by_lilly",
+    "tags": [
+      "salad",
+      "summer",
+      "no-cook",
+      "vegetarian"
+    ],
+    "title": "Melonen-Burrata-Salat mit Pršut",
+    "ingredients": [
+      "Cantaloupe-Melone",
+      "Rucola",
+      "Burrata",
+      "Parmaschinken oder Pršut",
+      "Pinienkerne (geröstet)",
+      "Zitronensaft",
+      "Olivenöl",
+      "Salz & Pfeffer nach Geschmack"
+    ],
+    "preparation": [
+      "Die Cantaloupe-Melone in dünne Scheiben schneiden und auf einem Bett aus Rucola anrichten.",
+      "Burrata daraufsetzen und mit Parmaschinken oder Pršut belegen.",
+      "Die Pinienkerne in einer Pfanne goldbraun rösten und darüberstreuen.",
+      "Mit etwas Zitronensaft und hochwertigem Olivenöl beträufeln.",
+      "Zum Schluss nach Bedarf mit Salz und Pfeffer würzen."
+    ],
+    "date_saved": "2026-07-04"
+  },
+  {
+    "index": 229,
+    "code": "DaVhgwwINTE",
+    "owner": "@dr.luisawerner",
+    "tags": [
+      "dessert",
+      "breakfast",
+      "high-protein",
+      "sugar-free"
+    ],
+    "title": "High Protein Kaiserschmarren",
+    "ingredients": [
+      "120g Skyr",
+      "60g Buchweizenmehl",
+      "2-3 EL Erythrit / Süße deiner Wahl",
+      "Etwas Backpulver",
+      "1 Ei (alternativ 1-2 Eiweiß aufschlagen und unterrühren)",
+      "Optional: Rosinen",
+      "Zum Servieren: Apfelmus & Erythrit zu Puder gemahlen"
+    ],
+    "preparation": [
+      "Skyr, Buchweizenmehl, Erythrit und Backpulver verrühren.",
+      "Ei unterrühren (oder alternativ Eiweiß steif schlagen und unterheben).",
+      "Optional Rosinen hinzufügen.",
+      "Teig in einer Pfanne ausbacken und in Stücke zerreißen.",
+      "Mit Apfelmus und gemahlenem Erythrit-Puder servieren."
+    ],
+    "date_saved": "2026-07-04"
+  },
+  {
+    "index": 230,
+    "code": "DZ7dTE_sh4j",
+    "owner": "@fit_sophia_laetitia",
+    "tags": [
+      "vegetarian",
+      "quick",
+      "main",
+      "snack"
+    ],
+    "title": "Knusprige Couscous-Taler mit geschmolzenem Mozzarella",
+    "ingredients": [
+      "1/4 Tasse Couscous",
+      "3 Tomaten",
+      "1/3 Bund Petersilie",
+      "1 Schalotte",
+      "2 Eier",
+      "2-3 EL Mehl",
+      "50 g Parmesan oder vegetarische Alternative",
+      "1 Mozzarella",
+      "Salz & Pfeffer",
+      "Olivenöl"
+    ],
+    "preparation": [
+      "Die Tomaten fein würfeln und gut abtropfen lassen, damit die Masse später nicht zu feucht wird.",
+      "Petersilie und Schalotte klein schneiden, Parmesan fein reiben.",
+      "Alles zusammen mit Couscous, Eiern, Mehl sowie Salz und Pfeffer zu einer formbaren Masse vermengen.",
+      "Mozzarella in kleine Würfel schneiden.",
+      "Mit leicht angefeuchteten Händen etwas Couscous-Masse aufnehmen, einen Mozzarellawürfel in die Mitte setzen und zu kleinen Talern formen.",
+      "Die Taler in einer Pfanne mit etwas Olivenöl bei mittlerer Hitze goldbraun und knusprig ausbacken.",
+      "Am besten direkt aus der Pfanne genießen – dann ist die Mitte noch herrlich weich und käsig."
+    ],
+    "date_saved": "2026-07-04"
   }
 ]
