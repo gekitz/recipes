@@ -7035,55 +7035,14 @@
     "index": 294
   },
   {
-    "code": "Dc8MrpZo4Jb",
-    "owner": "@traeum.gut",
-    "tags": [
-      "main",
-      "pasta",
-      "vegetarian",
-      "seasonal",
-      "family"
-    ],
-    "title": "Kürbis-Lasagne ohne Béchamelsauce",
-    "ingredients": [
-      "800 g Hokkaidokürbis (alternativ Butternut, dann weniger intensive Farbe)",
-      "1 Zwiebel",
-      "1 Knoblauchzehe",
-      "1 Karotte",
-      "2 EL Tomatenmark",
-      "400 ml stückige Tomaten",
-      "350 ml Gemüsebrühe",
-      "Gewürze nach Wahl: Salz (sparsam wegen Frischkäse), Pfeffer, Paprika, Muskat",
-      "120 g Frischkäse",
-      "2 Kugeln Mozzarella (ca. 250 g)",
-      "8-10 Lasagneplatten (je nach Auflaufform)",
-      "100 g Hartkäse (z.B. Emmentaler), gerieben",
-      "Olivenöl zum Anbraten und Bepinseln"
-    ],
-    "preparation": [
-      "Eine Auflaufform mit Öl bepinseln. Mozzarella aufschneiden und die Flüssigkeit abtropfen lassen.",
-      "Kürbis halbieren, die Hälften nochmals in Viertel oder Achtel teilen und mit einer Reibe zu feinen Streifen reiben (Stufe 4) – nur so wird die Lasagne perfekt.",
-      "Für die Sauce Zwiebel, Knoblauch und Karotte schälen, fein hacken und in Olivenöl anbraten.",
-      "Tomatenmark, Kürbis und Gewürze hinzugeben und kurz mit anbraten.",
-      "Backofen auf 200 °C Ober-/Unterhitze vorheizen.",
-      "Gemüsebrühe und gehackte Tomaten zugeben und ca. 10-15 Minuten garen, bis der Kürbis weicher, aber noch bissfest ist. Zuletzt den Frischkäse einrühren.",
-      "Schichten: zuerst etwas Sauce in die Form, dann Lasagneplatten, dann wieder Sauce. Nach 2 Schichten den Mozzarella mit einarbeiten. So weitermachen, bis die Sauce verbraucht ist – die letzte Schicht sollte Sauce sein.",
-      "Am Schluss den geriebenen Käse auf der Lasagne verteilen.",
-      "Im Ofen ca. 20-30 Minuten backen. Nach 20 Minuten mit einem Messer einstechen, ob die Nudeln gar sind. Falls die Oberfläche zu braun wird, mit Alufolie abdecken.",
-      "Herausnehmen, kurz auskühlen lassen und genießen."
-    ],
-    "date_saved": "2026-09-07",
-    "index": 295
-  },
-  {
     "code": "Db_XdqeI9PK",
     "owner": "@nadinetatjana_",
     "tags": [
       "main",
       "salad",
       "chicken",
-      "high-protein",
-      "quick"
+      "quick",
+      "high-protein"
     ],
     "title": "Crunchy Taco Salat in 30 Minuten",
     "ingredients": [
@@ -7096,21 +7055,21 @@
       "1 Dose Kichererbsen",
       "1 Tasse Mais",
       "Dressing: 350 g griechischer Joghurt (0 %)",
-      "Dressing: 1-2 EL Taco Gewürz",
+      "Dressing: 1–2 EL Taco Gewürz",
       "Dressing: Saft einer Limette",
       "Dressing: 2 TL Olivenöl",
       "Dressing: 2 TL Honig",
       "Dressing: Salz nach Geschmack"
     ],
     "preparation": [
-      "Hähnchenbrust im Airfryer garen und in Würfel schneiden.",
+      "Hähnchenbrust im Airfryer garen und würfeln.",
       "Gurke, rote Zwiebel, Cherrytomaten und Paprika klein schneiden, Petersilie hacken.",
-      "Kichererbsen abtropfen lassen und mit dem Mais zum Gemüse geben.",
+      "Kichererbsen abtropfen lassen. Gemüse, Kichererbsen, Mais und Hähnchen in eine große Schüssel geben.",
       "Für das Dressing griechischen Joghurt, Taco Gewürz, Limettensaft, Olivenöl, Honig und Salz verrühren.",
-      "Alles zusammenmischen und servieren."
+      "Dressing über den Salat geben, alles gut vermischen und servieren."
     ],
-    "date_saved": "2026-09-08",
-    "index": 296
+    "date_saved": "2026-09-09",
+    "index": 295
   },
   {
     "code": "DcwiIScogsq",
@@ -7118,37 +7077,76 @@
     "tags": [
       "main",
       "vegetarian",
-      "halloumi",
       "tacos",
-      "quick",
-      "spicy"
+      "halloumi",
+      "quick"
     ],
     "title": "Halloumi & Mango Tacos",
     "ingredients": [
-      "250 g Halloumi",
-      "1 1/2 EL Agavensirup",
-      "1-1 1/2 TL Sriracha-Tabasco-Sauce",
-      "1/4 TL Chiliflocken",
-      "Mango Salsa: 1 reife Mango",
-      "Mango Salsa: 1/2 rote Paprika",
-      "Mango Salsa: 1 kleine Schalotte",
-      "Mango Salsa: 1/2 frische Chili",
-      "Mango Salsa: kleine Handvoll frischer Koriander",
-      "Mango Salsa: 1-2 TL Zitronen- oder Limettensaft",
-      "Mango Salsa: 1 EL Olivenöl extra vergine",
-      "Mango Salsa: Salz & frisch gemahlener schwarzer Pfeffer",
-      "1 reife Avocado",
-      "6 kleine Tortillas"
+      "Halloumi: 250 g Halloumi",
+      "Halloumi: 1½ EL Agavensirup",
+      "Halloumi: 1–1½ TL Sriracha-Tabasco-Sauce",
+      "Halloumi: ¼ TL Chiliflocken",
+      "Mango-Salsa: 1 reife Mango",
+      "Mango-Salsa: ½ rote Paprika",
+      "Mango-Salsa: 1 kleine Schalotte",
+      "Mango-Salsa: ½ frische Chili",
+      "Mango-Salsa: kleine Handvoll frischer Koriander",
+      "Mango-Salsa: 1–2 TL Zitronen- oder Limettensaft",
+      "Mango-Salsa: 1 EL Olivenöl extra vergine",
+      "Mango-Salsa: Salz & frisch gemahlener schwarzer Pfeffer",
+      "Dazu: 1 reife Avocado",
+      "Dazu: 6 kleine Tortillas"
     ],
     "preparation": [
       "Halloumi in Stücke schneiden. Agavensirup, Sriracha-Tabasco und Chiliflocken vermischen und den Halloumi darin marinieren.",
       "Mango, Paprika, Schalotte und Chili fein würfeln. Koriander, Zitronen- oder Limettensaft, Olivenöl, Salz und Pfeffer untermischen.",
       "Avocado zerdrücken.",
       "Tortillas in einer trockenen Pfanne leicht anrösten.",
-      "Halloumi bei mittlerer bis hoher Hitze 1-2 Minuten pro Seite goldbraun und karamellisiert braten.",
-      "Schichten: Avocado, dann scharfer Halloumi, dann Mango Salsa. Sofort servieren."
+      "Halloumi bei mittelhoher Hitze 1–2 Minuten pro Seite goldbraun und karamellisiert braten.",
+      "Schichten: Avocado → scharfer Halloumi → Mango-Salsa. Sofort servieren, solange der Halloumi heiß ist."
     ],
-    "date_saved": "2026-09-08",
+    "date_saved": "2026-09-09",
+    "index": 296
+  },
+  {
+    "code": "Dc8MrpZo4Jb",
+    "owner": "@traeum.gut",
+    "tags": [
+      "main",
+      "vegetarian",
+      "pasta",
+      "seasonal"
+    ],
+    "title": "Kürbis-Lasagne ohne Béchamelsauce",
+    "ingredients": [
+      "800 g Hokkaidokürbis (Butternut geht auch, dann ist die Farbe weniger intensiv)",
+      "1 Zwiebel",
+      "1 Knoblauchzehe",
+      "1 Karotte",
+      "2 EL Tomatenmark",
+      "400 ml stückige Tomaten",
+      "350 ml Gemüsebrühe",
+      "Gewürze nach Wahl: Salz (nicht zu viel wegen Frischkäse), Pfeffer, Paprika, Muskat",
+      "120 g Frischkäse",
+      "2 Kugeln Mozzarella (ca. 250 g)",
+      "8–10 Lasagneplatten je nach Auflaufform",
+      "100 g Hartkäse (z. B. Emmentaler), gerieben",
+      "Olivenöl zum Anbraten und Bepinseln"
+    ],
+    "preparation": [
+      "Eine Auflaufform mit Öl bepinseln. Mozzarella aufschneiden und die Flüssigkeit abtropfen lassen.",
+      "Kürbis halbieren, die Hälften nochmal in Viertel oder Achtel teilen und mit einer Reibe zu feinen Streifen reiben (Stufe 4) – nur so wird die Lasagne perfekt.",
+      "Für die Sauce Zwiebel, Knoblauch und Karotte schälen, fein hacken und in Olivenöl anbraten.",
+      "Tomatenmark, Kürbis und Gewürze hinzugeben und kurz mit anbraten.",
+      "Backofen auf 200 °C Ober-/Unterhitze vorheizen.",
+      "Gemüsebrühe und gehackte Tomaten hinzugeben und ca. 10–15 Minuten garen, bis der Kürbis weicher, aber noch bissfest ist. Zuletzt den Frischkäse einrühren.",
+      "Schichten: zuerst etwas Sauce in die Form, dann Lasagneplatten, dann wieder Sauce. Nach 2 Schichten den Mozzarella mit einarbeiten. So weitermachen, bis die Sauce verbraucht ist – die letzte Schicht sollte Sauce sein.",
+      "Zum Schluss den geriebenen Käse auf der Lasagne verteilen.",
+      "Im Ofen ca. 20–30 Minuten backen. Nach 20 Minuten mit einem Messer hineinstechen, ob die Nudeln gar sind. Ggf. mit Alufolie abdecken, falls sie oben zu braun wird.",
+      "Herausnehmen, kurz auskühlen lassen und genießen."
+    ],
+    "date_saved": "2026-09-09",
     "index": 297
   }
 ]
