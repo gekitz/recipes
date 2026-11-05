@@ -10626,5 +10626,62 @@
       "Serve as tacos, burrito bowls or nachos."
     ],
     "date_saved": "2026-11-03"
+  },
+  {
+    "index": 391,
+    "code": "DfUtP_rMfCg",
+    "owner": "@teichners_pizza_palace",
+    "tags": [
+      "side",
+      "bread",
+      "vegetarian"
+    ],
+    "title": "Knoblauch Naan (Garlic Naan)",
+    "ingredients": [
+      "Poolish: 200g Weizenmehl Type 00 (or Type 405)",
+      "Poolish: 200g Wasser",
+      "Poolish: 0,5g frische Hefe",
+      "Hauptteig: 400g Weizenmehl Type 00 (or Type 405)",
+      "175g Wasser",
+      "20g Olivenöl",
+      "15g Salz",
+      "10g Joghurt",
+      "10g frische Hefe (or 3,5g trockene)",
+      "Knoblauchbutter: 150g Butter",
+      "3 Zehen Knoblauch",
+      "Koriander nach Bedarf"
+    ],
+    "preparation": [
+      "The day before: mix poolish flour, water and 0.5g fresh yeast into a paste; let mature overnight.",
+      "Next day: combine all main dough ingredients and knead to a smooth dough.",
+      "Stretch & fold, shape into a ball, place in a lightly oiled bowl, cover with a damp towel and rest 60 minutes.",
+      "Finely chop garlic and coriander and mix with the butter using a fork.",
+      "Punch down the dough, divide into 6 equal pieces, shape into balls and rest covered 15 minutes.",
+      "Dust work surface with flour, roll out flatbreads.",
+      "Cook in a coated pan over medium-high heat 3-4 minutes per side.",
+      "Brush hot naan immediately with garlic butter."
+    ],
+    "date_saved": "2026-11-05"
+  },
+  {
+    "index": 392,
+    "code": "DfVCGvYtfEx",
+    "owner": "@antonikocht",
+    "tags": [
+      "salad",
+      "side",
+      "vegetarian",
+      "potato"
+    ],
+    "title": "Knuspriger Kartoffel-Gurken-Salat (Crispy Potato-Cucumber Salad)",
+    "ingredients": [
+      "Kartoffeln",
+      "Gurke",
+      "(exact amounts in full recipe, sent via DM after commenting 'Rezept')"
+    ],
+    "preparation": [
+      "Full recipe is sent via DM after commenting 'Rezept' on the post — not available in the caption."
+    ],
+    "date_saved": "2026-11-05"
   }
 ]
